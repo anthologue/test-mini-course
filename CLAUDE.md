@@ -7,11 +7,12 @@
 
 ## Project Structure
 
-The repository is nearly empty for now. As it grows, keep it simple:
+A single scrolling page with one section per slide of the course deck (10 slides).
 
-- `index.html` — the main page (at the top level)
-- `css/` — stylesheets
-- `js/` — JavaScript files
+- `index.html` — the whole course page
+- `css/styles.css` — layout, colours, and the light/dark themes
+- `js/main.js` — theme toggle, menu, and "current section" highlight
+- `images/` — pictures taken from the slide deck
 - `CLAUDE.md` — this file
 
 Update this section whenever files or folders are added.
