@@ -18,7 +18,7 @@
       <span class="menu-icon" aria-hidden="true"></span>
       <span>Menu</span>
     </button>
-    <a class="brand" href="#slide-1">Frontline Roles for AI Co-Worker Agents</a>
+    <a class="brand" href="#main">Frontline Roles for AI Co-Worker Agents</a>
     <button class="theme-btn" type="button" aria-pressed="false">
       <span class="switch" aria-hidden="true"></span>
       <span>Dark mode</span>
@@ -39,27 +39,32 @@
         <li><a href="#slide-8">Tourism &amp; attractions</a></li>
         <li><a href="#slide-9">Retail challenges</a></li>
         <li><a href="#slide-10">Retail AI agents</a></li>
-        <li class="needs-js"><a href="#slide-11">Practice simulator</a></li>
       </ol>
+      <p class="nav-title nav-title--spaced needs-js">Practice</p>
+      <ul class="nav-extra needs-js">
+        <li><a href="#quiz">Quiz</a></li>
+        <li><a href="#simulator">Simulator</a></li>
+      </ul>
     </nav>
 
     <main id="main">
+      <div class="tabs needs-js" role="tablist" aria-label="Course views">
+        <button class="tab" type="button" role="tab" id="tab-lesson" data-tab="lesson" aria-selected="true" aria-controls="panel-lesson">Lesson</button>
+        <button class="tab" type="button" role="tab" id="tab-quiz" data-tab="quiz" aria-selected="false" aria-controls="panel-quiz" tabindex="-1">Quiz</button>
+        <button class="tab" type="button" role="tab" id="tab-simulator" data-tab="simulator" aria-selected="false" aria-controls="panel-simulator" tabindex="-1">Simulator</button>
+      </div>
 
-      <!-- Slide 1 -->
-      <section class="slide slide--first" id="slide-1" aria-labelledby="title-1">
-        <div class="banner banner--tall">
-          <img class="banner__img" src="images/intro-brain.jpg" width="1400" height="933"
-               alt="A glowing digital brain built from circuit boards.">
-          <div class="banner__text">
-            <p class="kicker">Mini-course for the AI class</p>
-            <h1 id="title-1">Frontline Roles for AI Co-Worker Agents</h1>
+      <div class="tabpanel tabpanel--flow" role="tabpanel" id="panel-lesson" aria-labelledby="tab-lesson">
+        <!-- Slide 1 -->
+        <section class="slide slide--first" id="slide-1" aria-labelledby="title-1">
+          <div class="banner banner--tall">
+            <img class="banner__img" src="images/intro-brain.jpg" width="1400" height="933"
+                 alt="A glowing digital brain built from circuit boards.">
+            <div class="banner__text">
+              <p class="kicker">Mini-course for the AI class</p>
+              <h1 id="title-1">Frontline Roles for AI Co-Worker Agents</h1>
+            </div>
           </div>
-        </div>
-        <div class="tabs needs-js" role="tablist" aria-label="Choose lesson or quiz">
-          <button class="tab" type="button" role="tab" id="tab-lesson-1" data-tab="lesson" aria-selected="true" aria-controls="lesson-1">Lesson</button>
-          <button class="tab" type="button" role="tab" id="tab-quiz-1" data-tab="quiz" aria-selected="false" aria-controls="quiz-1" tabindex="-1">Quiz</button>
-        </div>
-        <div class="tabpanel" role="tabpanel" id="lesson-1" aria-labelledby="tab-lesson-1">
           <div class="intro">
             <p class="lead">This course is about <strong>frontline service agents</strong>: AI co-workers that talk with customers and visitors, the way a receptionist, shop assistant or guide would.</p>
             <h2 class="small-heading">What you will learn</h2>
@@ -68,57 +73,20 @@
               <li>The roles they can play, from reception to retail</li>
               <li>How human jobs can change, and how companies can support their staff</li>
             </ul>
-            <p class="hint">Scroll down to read, or use the menu to jump to any slide. Each lesson has a Lesson tab and a Quiz tab, and the course ends with a practice simulator.</p>
+            <p class="hint">Scroll down to read, or use the menu to jump to any slide. When you are ready, use the tabs at the top to take the 8-question Quiz or try the Simulator.</p>
           </div>
-          <div class="to-quiz needs-js">
-            <button class="btn" type="button" data-tab-target="quiz">Take the quiz &rarr;</button>
-          </div>
-        </div>
-        <div class="tabpanel needs-js" role="tabpanel" id="quiz-1" aria-labelledby="tab-quiz-1" hidden>
-          <div class="quiz">
-            <p class="quiz__intro">One question to check what you learned in this lesson.</p>
-            <div class="question" aria-labelledby="check-q-1">
-              <p class="question__label">Question 1 of 1</p>
-              <p class="question__q" id="check-q-1">In this course, what is a &ldquo;frontline service agent&rdquo;?</p>
-              <div class="question__choices" role="group" aria-labelledby="check-q-1">
-                <button class="choice" type="button">A human manager who supervises a shop floor</button>
-                <button class="choice" type="button" data-correct>An AI co-worker that talks with customers and visitors</button>
-                <button class="choice" type="button">A website that only lists prices</button>
-              </div>
-              <div class="question__result" role="status" aria-live="polite">
-                <p class="question__verdict"></p>
-                <p class="question__explain" hidden>Frontline service agents are AI co-workers that deal with customers and visitors directly, the way a receptionist, shop assistant or guide would.</p>
-              </div>
-            </div>
-            <div class="quiz__done" role="status" aria-live="polite">
-              <div class="quiz__summary" hidden>
-                <p class="quiz__score">Your score: <strong class="quiz__points"></strong></p>
-                <p class="quiz__message"></p>
-                <div class="quiz__actions">
-                  <button class="btn btn--ghost" type="button" data-tab-target="lesson">Review the lesson</button>
-                  <a class="btn" href="#slide-2">Continue to the next section &darr;</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- Slide 2 -->
-      <section class="slide" id="slide-2" aria-labelledby="title-2">
-        <div class="banner">
-          <img class="banner__img banner__img--right" src="images/job-worry.jpg" width="1600" height="897"
-               alt="A worried man in a suit sitting with his hands pressed together in front of his face.">
-          <div class="banner__text">
-            <p class="kicker">Slide 2 of 10</p>
-            <h2 id="title-2">Will AI Take Over My Job?</h2>
+        <!-- Slide 2 -->
+        <section class="slide" id="slide-2" aria-labelledby="title-2">
+          <div class="banner">
+            <img class="banner__img banner__img--right" src="images/job-worry.jpg" width="1600" height="897"
+                 alt="A worried man in a suit sitting with his hands pressed together in front of his face.">
+            <div class="banner__text">
+              <p class="kicker">Slide 2 of 10</p>
+              <h2 id="title-2">Will AI Take Over My Job?</h2>
+            </div>
           </div>
-        </div>
-        <div class="tabs needs-js" role="tablist" aria-label="Choose lesson or quiz">
-          <button class="tab" type="button" role="tab" id="tab-lesson-2" data-tab="lesson" aria-selected="true" aria-controls="lesson-2">Lesson</button>
-          <button class="tab" type="button" role="tab" id="tab-quiz-2" data-tab="quiz" aria-selected="false" aria-controls="quiz-2" tabindex="-1">Quiz</button>
-        </div>
-        <div class="tabpanel" role="tabpanel" id="lesson-2" aria-labelledby="tab-lesson-2">
           <p class="lead">Staff have real worries about AI. Each worry on the left has an answer a company can give on the right.</p>
 
           <ul class="pairs">
@@ -153,49 +121,12 @@
               <dd>Keeping good employees from leaving.</dd>
             </dl>
           </aside>
-          <div class="to-quiz needs-js">
-            <button class="btn" type="button" data-tab-target="quiz">Take the quiz &rarr;</button>
-          </div>
-        </div>
-        <div class="tabpanel needs-js" role="tabpanel" id="quiz-2" aria-labelledby="tab-quiz-2" hidden>
-          <div class="quiz">
-            <p class="quiz__intro">One question to check what you learned in this lesson.</p>
-            <div class="question" aria-labelledby="check-q-2">
-              <p class="question__label">Question 1 of 1</p>
-              <p class="question__q" id="check-q-2">Which of these is one way a company can reassure staff who worry about AI?</p>
-              <div class="question__choices" role="group" aria-labelledby="check-q-2">
-                <button class="choice" type="button" data-correct>Train staff in AI skills and open a new career track for AI-ready workers</button>
-                <button class="choice" type="button">Keep AI out of the workplace entirely</button>
-                <button class="choice" type="button">Cut pay to cover the cost of the AI</button>
-              </div>
-              <div class="question__result" role="status" aria-live="polite">
-                <p class="question__verdict"></p>
-                <p class="question__explain" hidden>Companies can respond with upskilling, job redesign, a transformed career path and staff retention, so people grow with AI instead of being left behind.</p>
-              </div>
-            </div>
-            <div class="quiz__done" role="status" aria-live="polite">
-              <div class="quiz__summary" hidden>
-                <p class="quiz__score">Your score: <strong class="quiz__points"></strong></p>
-                <p class="quiz__message"></p>
-                <div class="quiz__actions">
-                  <button class="btn btn--ghost" type="button" data-tab-target="lesson">Review the lesson</button>
-                  <a class="btn" href="#slide-3">Continue to the next section &darr;</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- Slide 3 -->
-      <section class="slide" id="slide-3" aria-labelledby="title-3">
-        <p class="kicker">Slide 3 of 10</p>
-        <h2 id="title-3">Frontline multi-modal conversational AI agents</h2>
-        <div class="tabs needs-js" role="tablist" aria-label="Choose lesson or quiz">
-          <button class="tab" type="button" role="tab" id="tab-lesson-3" data-tab="lesson" aria-selected="true" aria-controls="lesson-3">Lesson</button>
-          <button class="tab" type="button" role="tab" id="tab-quiz-3" data-tab="quiz" aria-selected="false" aria-controls="quiz-3" tabindex="-1">Quiz</button>
-        </div>
-        <div class="tabpanel" role="tabpanel" id="lesson-3" aria-labelledby="tab-lesson-3">
+        <!-- Slide 3 -->
+        <section class="slide" id="slide-3" aria-labelledby="title-3">
+          <p class="kicker">Slide 3 of 10</p>
+          <h2 id="title-3">Frontline multi-modal conversational AI agents</h2>
           <p class="lead accent">As a &lsquo;fast-response, lean-cost, multi-role&rsquo; AI co-worker.</p>
 
           <div class="split">
@@ -248,49 +179,12 @@
               <dd>Putting an agent into use at a real place, such as a shop or an office.</dd>
             </dl>
           </aside>
-          <div class="to-quiz needs-js">
-            <button class="btn" type="button" data-tab-target="quiz">Take the quiz &rarr;</button>
-          </div>
-        </div>
-        <div class="tabpanel needs-js" role="tabpanel" id="quiz-3" aria-labelledby="tab-quiz-3" hidden>
-          <div class="quiz">
-            <p class="quiz__intro">One question to check what you learned in this lesson.</p>
-            <div class="question" aria-labelledby="check-q-3">
-              <p class="question__label">Question 1 of 1</p>
-              <p class="question__q" id="check-q-3">What does &ldquo;Train Once, Use Everywhere&rdquo; mean?</p>
-              <div class="question__choices" role="group" aria-labelledby="check-q-3">
-                <button class="choice" type="button">Each agent must be trained again at every location</button>
-                <button class="choice" type="button">Agents can only be used at one site</button>
-                <button class="choice" type="button" data-correct>A single &ldquo;brain&rdquo;, once trained, controls deployments across all sites and locations</button>
-              </div>
-              <div class="question__result" role="status" aria-live="polite">
-                <p class="question__verdict"></p>
-                <p class="question__explain" hidden>Training happens once, in one place, and the same &ldquo;brain&rdquo; then runs the agents at every site.</p>
-              </div>
-            </div>
-            <div class="quiz__done" role="status" aria-live="polite">
-              <div class="quiz__summary" hidden>
-                <p class="quiz__score">Your score: <strong class="quiz__points"></strong></p>
-                <p class="quiz__message"></p>
-                <div class="quiz__actions">
-                  <button class="btn btn--ghost" type="button" data-tab-target="lesson">Review the lesson</button>
-                  <a class="btn" href="#slide-4">Continue to the next section &darr;</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- Slide 4 -->
-      <section class="slide" id="slide-4" aria-labelledby="title-4">
-        <p class="kicker">Slide 4 of 10</p>
-        <h2 id="title-4">Roles for Frontline AI Co-workers</h2>
-        <div class="tabs needs-js" role="tablist" aria-label="Choose lesson or quiz">
-          <button class="tab" type="button" role="tab" id="tab-lesson-4" data-tab="lesson" aria-selected="true" aria-controls="lesson-4">Lesson</button>
-          <button class="tab" type="button" role="tab" id="tab-quiz-4" data-tab="quiz" aria-selected="false" aria-controls="quiz-4" tabindex="-1">Quiz</button>
-        </div>
-        <div class="tabpanel" role="tabpanel" id="lesson-4" aria-labelledby="tab-lesson-4">
+        <!-- Slide 4 -->
+        <section class="slide" id="slide-4" aria-labelledby="title-4">
+          <p class="kicker">Slide 4 of 10</p>
+          <h2 id="title-4">Roles for Frontline AI Co-workers</h2>
           <p class="lead">A platform of AI agents trained in a wide range of engagement roles, from backoffice to frontdesk to frontline.</p>
 
           <figure class="figure figure--white">
@@ -360,49 +254,12 @@
               <dd>Work behind the scenes, work at a reception desk, and work face to face with customers.</dd>
             </dl>
           </aside>
-          <div class="to-quiz needs-js">
-            <button class="btn" type="button" data-tab-target="quiz">Take the quiz &rarr;</button>
-          </div>
-        </div>
-        <div class="tabpanel needs-js" role="tabpanel" id="quiz-4" aria-labelledby="tab-quiz-4" hidden>
-          <div class="quiz">
-            <p class="quiz__intro">One question to check what you learned in this lesson.</p>
-            <div class="question" aria-labelledby="check-q-4">
-              <p class="question__label">Question 1 of 1</p>
-              <p class="question__q" id="check-q-4">Which AI role gives staff immediate answers about corporate policies and operational procedures?</p>
-              <div class="question__choices" role="group" aria-labelledby="check-q-4">
-                <button class="choice" type="button">AI Concierge</button>
-                <button class="choice" type="button" data-correct>AI Knowledge Agent</button>
-                <button class="choice" type="button">AI Feedback Agent</button>
-              </div>
-              <div class="question__result" role="status" aria-live="polite">
-                <p class="question__verdict"></p>
-                <p class="question__explain" hidden>The AI Knowledge Agent answers staff questions on enterprise knowledge. The Concierge guides visitors, and the Feedback Agent collects feedback.</p>
-              </div>
-            </div>
-            <div class="quiz__done" role="status" aria-live="polite">
-              <div class="quiz__summary" hidden>
-                <p class="quiz__score">Your score: <strong class="quiz__points"></strong></p>
-                <p class="quiz__message"></p>
-                <div class="quiz__actions">
-                  <button class="btn btn--ghost" type="button" data-tab-target="lesson">Review the lesson</button>
-                  <a class="btn" href="#slide-5">Continue to the next section &darr;</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- Slide 5 -->
-      <section class="slide" id="slide-5" aria-labelledby="title-5">
-        <p class="kicker">Slide 5 of 10</p>
-        <h2 id="title-5">Human Job Re-design &amp; Re-skilling</h2>
-        <div class="tabs needs-js" role="tablist" aria-label="Choose lesson or quiz">
-          <button class="tab" type="button" role="tab" id="tab-lesson-5" data-tab="lesson" aria-selected="true" aria-controls="lesson-5">Lesson</button>
-          <button class="tab" type="button" role="tab" id="tab-quiz-5" data-tab="quiz" aria-selected="false" aria-controls="quiz-5" tabindex="-1">Quiz</button>
-        </div>
-        <div class="tabpanel" role="tabpanel" id="lesson-5" aria-labelledby="tab-lesson-5">
+        <!-- Slide 5 -->
+        <section class="slide" id="slide-5" aria-labelledby="title-5">
+          <p class="kicker">Slide 5 of 10</p>
+          <h2 id="title-5">Human Job Re-design &amp; Re-skilling</h2>
           <p class="lead">How can the role of a human staff member be re-designed in a hybrid workforce?</p>
 
           <div class="split split--media">
@@ -430,49 +287,12 @@
               <dd>A number used to measure how well something is going, such as how many customers were helped.</dd>
             </dl>
           </aside>
-          <div class="to-quiz needs-js">
-            <button class="btn" type="button" data-tab-target="quiz">Take the quiz &rarr;</button>
-          </div>
-        </div>
-        <div class="tabpanel needs-js" role="tabpanel" id="quiz-5" aria-labelledby="tab-quiz-5" hidden>
-          <div class="quiz">
-            <p class="quiz__intro">One question to check what you learned in this lesson.</p>
-            <div class="question" aria-labelledby="check-q-5">
-              <p class="question__label">Question 1 of 1</p>
-              <p class="question__q" id="check-q-5">What change to a human role does this slide suggest?</p>
-              <div class="question__choices" role="group" aria-labelledby="check-q-5">
-                <button class="choice" type="button">From a supervisor to an individual contributor</button>
-                <button class="choice" type="button">From a customer-facing role to a role with no AI at all</button>
-                <button class="choice" type="button" data-correct>From an individual contributor to a supervisor of AI co-workers</button>
-              </div>
-              <div class="question__result" role="status" aria-live="polite">
-                <p class="question__verdict"></p>
-                <p class="question__explain" hidden>The slide asks whether staff can supervise AI co-workers, configure them for best performance, and earn from their collective KPIs.</p>
-              </div>
-            </div>
-            <div class="quiz__done" role="status" aria-live="polite">
-              <div class="quiz__summary" hidden>
-                <p class="quiz__score">Your score: <strong class="quiz__points"></strong></p>
-                <p class="quiz__message"></p>
-                <div class="quiz__actions">
-                  <button class="btn btn--ghost" type="button" data-tab-target="lesson">Review the lesson</button>
-                  <a class="btn" href="#slide-6">Continue to the next section &darr;</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- Slide 6 -->
-      <section class="slide" id="slide-6" aria-labelledby="title-6">
-        <p class="kicker">Slide 6 of 10</p>
-        <h2 id="title-6">AI Agents for Customer Service</h2>
-        <div class="tabs needs-js" role="tablist" aria-label="Choose lesson or quiz">
-          <button class="tab" type="button" role="tab" id="tab-lesson-6" data-tab="lesson" aria-selected="true" aria-controls="lesson-6">Lesson</button>
-          <button class="tab" type="button" role="tab" id="tab-quiz-6" data-tab="quiz" aria-selected="false" aria-controls="quiz-6" tabindex="-1">Quiz</button>
-        </div>
-        <div class="tabpanel" role="tabpanel" id="lesson-6" aria-labelledby="tab-lesson-6">
+        <!-- Slide 6 -->
+        <section class="slide" id="slide-6" aria-labelledby="title-6">
+          <p class="kicker">Slide 6 of 10</p>
+          <h2 id="title-6">AI Agents for Customer Service</h2>
 
           <div class="split split--media">
             <div class="points">
@@ -503,49 +323,12 @@
               <dd>Without touching anything. Here, you speak instead of pressing a screen.</dd>
             </dl>
           </aside>
-          <div class="to-quiz needs-js">
-            <button class="btn" type="button" data-tab-target="quiz">Take the quiz &rarr;</button>
-          </div>
-        </div>
-        <div class="tabpanel needs-js" role="tabpanel" id="quiz-6" aria-labelledby="tab-quiz-6" hidden>
-          <div class="quiz">
-            <p class="quiz__intro">One question to check what you learned in this lesson.</p>
-            <div class="question" aria-labelledby="check-q-6">
-              <p class="question__label">Question 1 of 1</p>
-              <p class="question__q" id="check-q-6">Why can giving feedback by voice to an AI agent be more hygienic?</p>
-              <div class="question__choices" role="group" aria-labelledby="check-q-6">
-                <button class="choice" type="button" data-correct>Users give feedback without touching a panel</button>
-                <button class="choice" type="button">The panel is cleaned automatically after every use</button>
-                <button class="choice" type="button">Feedback is no longer collected at all</button>
-              </div>
-              <div class="question__result" role="status" aria-live="polite">
-                <p class="question__verdict"></p>
-                <p class="question__explain" hidden>Voice feedback is contactless, so users avoid the contact-related risks of touching a shared panel.</p>
-              </div>
-            </div>
-            <div class="quiz__done" role="status" aria-live="polite">
-              <div class="quiz__summary" hidden>
-                <p class="quiz__score">Your score: <strong class="quiz__points"></strong></p>
-                <p class="quiz__message"></p>
-                <div class="quiz__actions">
-                  <button class="btn btn--ghost" type="button" data-tab-target="lesson">Review the lesson</button>
-                  <a class="btn" href="#slide-7">Continue to the next section &darr;</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- Slide 7 -->
-      <section class="slide" id="slide-7" aria-labelledby="title-7">
-        <p class="kicker">Slide 7 of 10</p>
-        <h2 id="title-7">AI Agents for Office Concierge / Receptionist</h2>
-        <div class="tabs needs-js" role="tablist" aria-label="Choose lesson or quiz">
-          <button class="tab" type="button" role="tab" id="tab-lesson-7" data-tab="lesson" aria-selected="true" aria-controls="lesson-7">Lesson</button>
-          <button class="tab" type="button" role="tab" id="tab-quiz-7" data-tab="quiz" aria-selected="false" aria-controls="quiz-7" tabindex="-1">Quiz</button>
-        </div>
-        <div class="tabpanel" role="tabpanel" id="lesson-7" aria-labelledby="tab-lesson-7">
+        <!-- Slide 7 -->
+        <section class="slide" id="slide-7" aria-labelledby="title-7">
+          <p class="kicker">Slide 7 of 10</p>
+          <h2 id="title-7">AI Agents for Office Concierge / Receptionist</h2>
           <p class="lead">AI agents can be deployed actively for hospitality functions: to receive physical visitors and coordinate with staff on visitor arrivals.</p>
 
           <div class="split split--media">
@@ -571,49 +354,12 @@
               <dd>A lifelike on-screen person that can talk with you.</dd>
             </dl>
           </aside>
-          <div class="to-quiz needs-js">
-            <button class="btn" type="button" data-tab-target="quiz">Take the quiz &rarr;</button>
-          </div>
-        </div>
-        <div class="tabpanel needs-js" role="tabpanel" id="quiz-7" aria-labelledby="tab-quiz-7" hidden>
-          <div class="quiz">
-            <p class="quiz__intro">One question to check what you learned in this lesson.</p>
-            <div class="question" aria-labelledby="check-q-7">
-              <p class="question__label">Question 1 of 1</p>
-              <p class="question__q" id="check-q-7">Which of these can an AI receptionist do?</p>
-              <div class="question__choices" role="group" aria-labelledby="check-q-7">
-                <button class="choice" type="button">Hire new office staff</button>
-                <button class="choice" type="button" data-correct>Greet a guest, find out the meeting host, and notify staff of the arrival</button>
-                <button class="choice" type="button">Run the company&rsquo;s payroll</button>
-              </div>
-              <div class="question__result" role="status" aria-live="polite">
-                <p class="question__verdict"></p>
-                <p class="question__explain" hidden>It greets guests, asks for their name, company and host, directs them to the meeting facility, and notifies staff by SMS, WhatsApp or Telegram.</p>
-              </div>
-            </div>
-            <div class="quiz__done" role="status" aria-live="polite">
-              <div class="quiz__summary" hidden>
-                <p class="quiz__score">Your score: <strong class="quiz__points"></strong></p>
-                <p class="quiz__message"></p>
-                <div class="quiz__actions">
-                  <button class="btn btn--ghost" type="button" data-tab-target="lesson">Review the lesson</button>
-                  <a class="btn" href="#slide-8">Continue to the next section &darr;</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- Slide 8 -->
-      <section class="slide" id="slide-8" aria-labelledby="title-8">
-        <p class="kicker">Slide 8 of 10</p>
-        <h2 id="title-8">AI Agents for Hospitality &ndash; Tourism &amp; Attractions</h2>
-        <div class="tabs needs-js" role="tablist" aria-label="Choose lesson or quiz">
-          <button class="tab" type="button" role="tab" id="tab-lesson-8" data-tab="lesson" aria-selected="true" aria-controls="lesson-8">Lesson</button>
-          <button class="tab" type="button" role="tab" id="tab-quiz-8" data-tab="quiz" aria-selected="false" aria-controls="quiz-8" tabindex="-1">Quiz</button>
-        </div>
-        <div class="tabpanel" role="tabpanel" id="lesson-8" aria-labelledby="tab-lesson-8">
+        <!-- Slide 8 -->
+        <section class="slide" id="slide-8" aria-labelledby="title-8">
+          <p class="kicker">Slide 8 of 10</p>
+          <h2 id="title-8">AI Agents for Hospitality &ndash; Tourism &amp; Attractions</h2>
 
           <div class="split split--media">
             <div class="points">
@@ -641,49 +387,12 @@
               <dd>Suggesting a related extra item that goes with what the customer is buying.</dd>
             </dl>
           </aside>
-          <div class="to-quiz needs-js">
-            <button class="btn" type="button" data-tab-target="quiz">Take the quiz &rarr;</button>
-          </div>
-        </div>
-        <div class="tabpanel needs-js" role="tabpanel" id="quiz-8" aria-labelledby="tab-quiz-8" hidden>
-          <div class="quiz">
-            <p class="quiz__intro">One question to check what you learned in this lesson.</p>
-            <div class="question" aria-labelledby="check-q-8">
-              <p class="question__label">Question 1 of 1</p>
-              <p class="question__q" id="check-q-8">What does a Visitor Concierge agent do at a tourist attraction?</p>
-              <div class="question__choices" role="group" aria-labelledby="check-q-8">
-                <button class="choice" type="button">It only handles complaints after visitors have left</button>
-                <button class="choice" type="button">It sells tickets in a single language</button>
-                <button class="choice" type="button" data-correct>It serves visitors in different languages, introduces highlights, and suggests drinks or merchandise</button>
-              </div>
-              <div class="question__result" role="status" aria-live="polite">
-                <p class="question__verdict"></p>
-                <p class="question__explain" hidden>It welcomes visitors in their own language, introduces the attraction, and can upsell or cross-sell services and merchandise.</p>
-              </div>
-            </div>
-            <div class="quiz__done" role="status" aria-live="polite">
-              <div class="quiz__summary" hidden>
-                <p class="quiz__score">Your score: <strong class="quiz__points"></strong></p>
-                <p class="quiz__message"></p>
-                <div class="quiz__actions">
-                  <button class="btn btn--ghost" type="button" data-tab-target="lesson">Review the lesson</button>
-                  <a class="btn" href="#slide-9">Continue to the next section &darr;</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- Slide 9 -->
-      <section class="slide" id="slide-9" aria-labelledby="title-9">
-        <p class="kicker">Slide 9 of 10</p>
-        <h2 id="title-9">Challenges in Retail &amp; Service Industry</h2>
-        <div class="tabs needs-js" role="tablist" aria-label="Choose lesson or quiz">
-          <button class="tab" type="button" role="tab" id="tab-lesson-9" data-tab="lesson" aria-selected="true" aria-controls="lesson-9">Lesson</button>
-          <button class="tab" type="button" role="tab" id="tab-quiz-9" data-tab="quiz" aria-selected="false" aria-controls="quiz-9" tabindex="-1">Quiz</button>
-        </div>
-        <div class="tabpanel" role="tabpanel" id="lesson-9" aria-labelledby="tab-lesson-9">
+        <!-- Slide 9 -->
+        <section class="slide" id="slide-9" aria-labelledby="title-9">
+          <p class="kicker">Slide 9 of 10</p>
+          <h2 id="title-9">Challenges in Retail &amp; Service Industry</h2>
 
           <div class="split split--media">
             <ul class="challenges">
@@ -720,49 +429,12 @@
               <dd>The items a shop currently has available to sell.</dd>
             </dl>
           </aside>
-          <div class="to-quiz needs-js">
-            <button class="btn" type="button" data-tab-target="quiz">Take the quiz &rarr;</button>
-          </div>
-        </div>
-        <div class="tabpanel needs-js" role="tabpanel" id="quiz-9" aria-labelledby="tab-quiz-9" hidden>
-          <div class="quiz">
-            <p class="quiz__intro">One question to check what you learned in this lesson.</p>
-            <div class="question" aria-labelledby="check-q-9">
-              <p class="question__label">Question 1 of 1</p>
-              <p class="question__q" id="check-q-9">Which of these is one of the challenges listed for retail and service businesses?</p>
-              <div class="question__choices" role="group" aria-labelledby="check-q-9">
-                <button class="choice" type="button" data-correct>Having enough data to know what customers want</button>
-                <button class="choice" type="button">Customers wanting fewer products to choose from</button>
-                <button class="choice" type="button">Prices that never change</button>
-              </div>
-              <div class="question__result" role="status" aria-live="polite">
-                <p class="question__verdict"></p>
-                <p class="question__explain" hidden>The slide lists shifting demographics, in-store sales coverage, 24/7 consistent service, and knowing what customers want.</p>
-              </div>
-            </div>
-            <div class="quiz__done" role="status" aria-live="polite">
-              <div class="quiz__summary" hidden>
-                <p class="quiz__score">Your score: <strong class="quiz__points"></strong></p>
-                <p class="quiz__message"></p>
-                <div class="quiz__actions">
-                  <button class="btn btn--ghost" type="button" data-tab-target="lesson">Review the lesson</button>
-                  <a class="btn" href="#slide-10">Continue to the next section &darr;</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- Slide 10 -->
-      <section class="slide" id="slide-10" aria-labelledby="title-10">
-        <p class="kicker">Slide 10 of 10</p>
-        <h2 id="title-10">Retail AI Agents</h2>
-        <div class="tabs needs-js" role="tablist" aria-label="Choose lesson or quiz">
-          <button class="tab" type="button" role="tab" id="tab-lesson-10" data-tab="lesson" aria-selected="true" aria-controls="lesson-10">Lesson</button>
-          <button class="tab" type="button" role="tab" id="tab-quiz-10" data-tab="quiz" aria-selected="false" aria-controls="quiz-10" tabindex="-1">Quiz</button>
-        </div>
-        <div class="tabpanel" role="tabpanel" id="lesson-10" aria-labelledby="tab-lesson-10">
+        <!-- Slide 10 -->
+        <section class="slide" id="slide-10" aria-labelledby="title-10">
+          <p class="kicker">Slide 10 of 10</p>
+          <h2 id="title-10">Retail AI Agents</h2>
           <p class="lead accent">Engage Everywhere</p>
 
           <div class="split split--media">
@@ -801,17 +473,117 @@
               <dd>Special offers chosen to suit one particular customer.</dd>
             </dl>
           </aside>
-          <div class="to-quiz needs-js">
-            <button class="btn" type="button" data-tab-target="quiz">Take the quiz &rarr;</button>
-          </div>
+        </section>
+
+        <div class="to-quiz needs-js">
+          <button class="btn" type="button" data-tab-target="quiz">Take the quiz &rarr;</button>
         </div>
-        <div class="tabpanel needs-js" role="tabpanel" id="quiz-10" aria-labelledby="tab-quiz-10" hidden>
-          <div class="quiz">
-            <p class="quiz__intro">One question to check what you learned in this lesson.</p>
-            <div class="question" aria-labelledby="check-q-10">
-              <p class="question__label">Question 1 of 1</p>
-              <p class="question__q" id="check-q-10">What can customers do with a retail AI agent?</p>
-              <div class="question__choices" role="group" aria-labelledby="check-q-10">
+      </div>
+
+      <div class="tabpanel needs-js" role="tabpanel" id="panel-quiz" aria-labelledby="tab-quiz" hidden>
+        <!-- Quiz -->
+        <section class="slide slide--first" id="quiz" aria-labelledby="title-quiz">
+          <p class="kicker">Quiz</p>
+          <h2 id="title-quiz">Check what you learned</h2>
+          <p class="lead">Answer all 8 questions about the course. You see right or wrong straight away, and your score once every question is answered.</p>
+
+          <div class="quiz" data-total="8">
+            <p class="quiz__progress">Answered <strong class="quiz__answered">0</strong> of 8</p>
+            <div class="question" aria-labelledby="quiz-q-1">
+              <p class="question__label">Question 1 of 8</p>
+              <p class="question__q" id="quiz-q-1" tabindex="-1">Which of these is one way a company can reassure staff who worry about AI?</p>
+              <div class="question__choices" role="group" aria-labelledby="quiz-q-1">
+                <button class="choice" type="button" data-correct>Train staff in AI skills and open a new career track for AI-ready workers</button>
+                <button class="choice" type="button">Keep AI out of the workplace entirely</button>
+                <button class="choice" type="button">Cut pay to cover the cost of the AI</button>
+              </div>
+              <div class="question__result" role="status" aria-live="polite">
+                <p class="question__verdict"></p>
+                <p class="question__explain" hidden>Companies can respond with upskilling, job redesign, a transformed career path and staff retention, so people grow with AI instead of being left behind.</p>
+              </div>
+            </div>
+            <div class="question" aria-labelledby="quiz-q-2">
+              <p class="question__label">Question 2 of 8</p>
+              <p class="question__q" id="quiz-q-2" tabindex="-1">What does &ldquo;Train Once, Use Everywhere&rdquo; mean?</p>
+              <div class="question__choices" role="group" aria-labelledby="quiz-q-2">
+                <button class="choice" type="button">Each agent must be trained again at every location</button>
+                <button class="choice" type="button">Agents can only be used at one site</button>
+                <button class="choice" type="button" data-correct>A single &ldquo;brain&rdquo;, once trained, controls deployments across all sites and locations</button>
+              </div>
+              <div class="question__result" role="status" aria-live="polite">
+                <p class="question__verdict"></p>
+                <p class="question__explain" hidden>Training happens once, in one place, and the same &ldquo;brain&rdquo; then runs the agents at every site.</p>
+              </div>
+            </div>
+            <div class="question" aria-labelledby="quiz-q-3">
+              <p class="question__label">Question 3 of 8</p>
+              <p class="question__q" id="quiz-q-3" tabindex="-1">Which AI role gives staff immediate answers about corporate policies and operational procedures?</p>
+              <div class="question__choices" role="group" aria-labelledby="quiz-q-3">
+                <button class="choice" type="button">AI Concierge</button>
+                <button class="choice" type="button" data-correct>AI Knowledge Agent</button>
+                <button class="choice" type="button">AI Feedback Agent</button>
+              </div>
+              <div class="question__result" role="status" aria-live="polite">
+                <p class="question__verdict"></p>
+                <p class="question__explain" hidden>The AI Knowledge Agent answers staff questions on enterprise knowledge. The Concierge guides visitors, and the Feedback Agent collects feedback.</p>
+              </div>
+            </div>
+            <div class="question" aria-labelledby="quiz-q-4">
+              <p class="question__label">Question 4 of 8</p>
+              <p class="question__q" id="quiz-q-4" tabindex="-1">What change to a human role does the course suggest for a hybrid workforce?</p>
+              <div class="question__choices" role="group" aria-labelledby="quiz-q-4">
+                <button class="choice" type="button">From a supervisor to an individual contributor</button>
+                <button class="choice" type="button">From a customer-facing role to a role with no AI at all</button>
+                <button class="choice" type="button" data-correct>From an individual contributor to a supervisor of AI co-workers</button>
+              </div>
+              <div class="question__result" role="status" aria-live="polite">
+                <p class="question__verdict"></p>
+                <p class="question__explain" hidden>The slide asks whether staff can supervise AI co-workers, configure them for best performance, and earn from their collective KPIs.</p>
+              </div>
+            </div>
+            <div class="question" aria-labelledby="quiz-q-5">
+              <p class="question__label">Question 5 of 8</p>
+              <p class="question__q" id="quiz-q-5" tabindex="-1">Why can giving feedback by voice to an AI agent be more hygienic?</p>
+              <div class="question__choices" role="group" aria-labelledby="quiz-q-5">
+                <button class="choice" type="button" data-correct>Users give feedback without touching a panel</button>
+                <button class="choice" type="button">The panel is cleaned automatically after every use</button>
+                <button class="choice" type="button">Feedback is no longer collected at all</button>
+              </div>
+              <div class="question__result" role="status" aria-live="polite">
+                <p class="question__verdict"></p>
+                <p class="question__explain" hidden>Voice feedback is contactless, so users avoid the contact-related risks of touching a shared panel.</p>
+              </div>
+            </div>
+            <div class="question" aria-labelledby="quiz-q-6">
+              <p class="question__label">Question 6 of 8</p>
+              <p class="question__q" id="quiz-q-6" tabindex="-1">Which of these can an AI receptionist do?</p>
+              <div class="question__choices" role="group" aria-labelledby="quiz-q-6">
+                <button class="choice" type="button">Hire new office staff</button>
+                <button class="choice" type="button" data-correct>Greet a guest, find out the meeting host, and notify staff of the arrival</button>
+                <button class="choice" type="button">Run the company&rsquo;s payroll</button>
+              </div>
+              <div class="question__result" role="status" aria-live="polite">
+                <p class="question__verdict"></p>
+                <p class="question__explain" hidden>It greets guests, asks for their name, company and host, directs them to the meeting facility, and notifies staff by SMS, WhatsApp or Telegram.</p>
+              </div>
+            </div>
+            <div class="question" aria-labelledby="quiz-q-7">
+              <p class="question__label">Question 7 of 8</p>
+              <p class="question__q" id="quiz-q-7" tabindex="-1">What does a Visitor Concierge agent do at a tourist attraction?</p>
+              <div class="question__choices" role="group" aria-labelledby="quiz-q-7">
+                <button class="choice" type="button">It only handles complaints after visitors have left</button>
+                <button class="choice" type="button">It sells tickets in a single language</button>
+                <button class="choice" type="button" data-correct>It serves visitors in different languages, introduces highlights, and suggests drinks or merchandise</button>
+              </div>
+              <div class="question__result" role="status" aria-live="polite">
+                <p class="question__verdict"></p>
+                <p class="question__explain" hidden>It welcomes visitors in their own language, introduces the attraction, and can upsell or cross-sell services and merchandise.</p>
+              </div>
+            </div>
+            <div class="question" aria-labelledby="quiz-q-8">
+              <p class="question__label">Question 8 of 8</p>
+              <p class="question__q" id="quiz-q-8" tabindex="-1">What can customers do with a retail AI agent?</p>
+              <div class="question__choices" role="group" aria-labelledby="quiz-q-8">
                 <button class="choice" type="button">Only read the shop&rsquo;s opening hours</button>
                 <button class="choice" type="button" data-correct>Ask questions, check price and stock, and get personalized promotions</button>
                 <button class="choice" type="button">Only chat; they cannot check price or stock</button>
@@ -826,174 +598,178 @@
                 <p class="quiz__score">Your score: <strong class="quiz__points"></strong></p>
                 <p class="quiz__message"></p>
                 <div class="quiz__actions">
+                  <button class="btn quiz__restart" type="button">Try again</button>
                   <button class="btn btn--ghost" type="button" data-tab-target="lesson">Review the lesson</button>
-                  <a class="btn" href="#slide-11">Continue to the practice simulator &darr;</a>
+                  <button class="btn btn--ghost" type="button" data-tab-target="simulator">Try the simulator</button>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-      <!-- Practice simulator -->
-      <section class="slide needs-js" id="slide-11" aria-labelledby="title-11">
-        <p class="kicker">Practice</p>
-        <h2 id="title-11">Role-matching simulator</h2>
-        <p class="lead">Read each situation and choose the AI role that fits best. You get feedback straight away and a score at the end. The roles come from slide 4.</p>
+        </section>
+      </div>
 
-        <div class="sim" data-total="9">
-          <p class="sim__score">Score so far: <strong class="sim__points">0</strong> of 9</p>
-          <div class="question scenario" hidden>
-            <p class="question__label">Scenario 1 of 9</p>
-            <p class="question__q" id="sim-q-1" tabindex="-1">A shopper in a perfume shop wants help finding a scent they will like. Which AI role should handle it?</p>
-            <div class="question__choices" role="group" aria-labelledby="sim-q-1">
-              <button class="choice" type="button">AI Trainer</button>
-              <button class="choice" type="button" data-correct>AI Product Agent</button>
-              <button class="choice" type="button">AI Virtual Receptionist</button>
-              <button class="choice" type="button">AI e-Services Agent</button>
+      <div class="tabpanel needs-js" role="tabpanel" id="panel-simulator" aria-labelledby="tab-simulator" hidden>
+        <!-- Simulator -->
+        <section class="slide slide--first" id="simulator" aria-labelledby="title-11">
+          <p class="kicker">Practice</p>
+          <h2 id="title-11">Role-matching simulator</h2>
+          <p class="lead">Read each situation and choose the AI role that fits best. You get feedback straight away and a score at the end. The roles come from slide 4.</p>
+
+          <div class="sim" data-total="9">
+            <p class="sim__score">Score so far: <strong class="sim__points">0</strong> of 9</p>
+            <div class="question scenario" hidden>
+              <p class="question__label">Scenario 1 of 9</p>
+              <p class="question__q" id="sim-q-1" tabindex="-1">A shopper in a perfume shop wants help finding a scent they will like. Which AI role should handle it?</p>
+              <div class="question__choices" role="group" aria-labelledby="sim-q-1">
+                <button class="choice" type="button">AI Trainer</button>
+                <button class="choice" type="button" data-correct>AI Product Agent</button>
+                <button class="choice" type="button">AI Virtual Receptionist</button>
+                <button class="choice" type="button">AI e-Services Agent</button>
+              </div>
+              <div class="question__result" role="status" aria-live="polite">
+                <p class="question__verdict"></p>
+                <p class="question__explain" hidden>The AI Product Agent assists customers with product inquiries and makes relevant recommendations.</p>
+                <button class="btn sim__next" type="button" hidden>Next scenario &rarr;</button>
+              </div>
             </div>
-            <div class="question__result" role="status" aria-live="polite">
-              <p class="question__verdict"></p>
-              <p class="question__explain" hidden>The AI Product Agent assists customers with product inquiries and makes relevant recommendations.</p>
-              <button class="btn sim__next" type="button" hidden>Next scenario &rarr;</button>
+            <div class="question scenario" hidden>
+              <p class="question__label">Scenario 2 of 9</p>
+              <p class="question__q" id="sim-q-2" tabindex="-1">A visitor in a shopping centre asks how to get to the bank on Level 3. Which AI role should handle it?</p>
+              <div class="question__choices" role="group" aria-labelledby="sim-q-2">
+                <button class="choice" type="button" data-correct>AI Concierge</button>
+                <button class="choice" type="button">AI Restaurant Assistant</button>
+                <button class="choice" type="button">AI Feedback Agent</button>
+                <button class="choice" type="button">AI Knowledge Agent</button>
+              </div>
+              <div class="question__result" role="status" aria-live="polite">
+                <p class="question__verdict"></p>
+                <p class="question__explain" hidden>The AI Concierge recommends and guides visitors to offices, dining and shopping hotspots.</p>
+                <button class="btn sim__next" type="button" hidden>Next scenario &rarr;</button>
+              </div>
+            </div>
+            <div class="question scenario" hidden>
+              <p class="question__label">Scenario 3 of 9</p>
+              <p class="question__q" id="sim-q-3" tabindex="-1">A staff member needs a quick answer about a company policy. Which AI role should handle it?</p>
+              <div class="question__choices" role="group" aria-labelledby="sim-q-3">
+                <button class="choice" type="button">AI Feedback Agent</button>
+                <button class="choice" type="button">AI Restaurant Assistant</button>
+                <button class="choice" type="button" data-correct>AI Knowledge Agent</button>
+                <button class="choice" type="button">AI Service Robot</button>
+              </div>
+              <div class="question__result" role="status" aria-live="polite">
+                <p class="question__verdict"></p>
+                <p class="question__explain" hidden>The AI Knowledge Agent gives staff immediate answers on enterprise knowledge, from corporate policies to operational procedures.</p>
+                <button class="btn sim__next" type="button" hidden>Next scenario &rarr;</button>
+              </div>
+            </div>
+            <div class="question scenario" hidden>
+              <p class="question__label">Scenario 4 of 9</p>
+              <p class="question__q" id="sim-q-4" tabindex="-1">A guest arrives for a meeting. Someone needs to register them and let their host know they are here. Which AI role should handle it?</p>
+              <div class="question__choices" role="group" aria-labelledby="sim-q-4">
+                <button class="choice" type="button">AI Trainer</button>
+                <button class="choice" type="button" data-correct>AI Virtual Receptionist</button>
+                <button class="choice" type="button">AI Feedback Agent</button>
+                <button class="choice" type="button">AI Restaurant Assistant</button>
+              </div>
+              <div class="question__result" role="status" aria-live="polite">
+                <p class="question__verdict"></p>
+                <p class="question__explain" hidden>The AI Virtual Receptionist receives and registers guests and notifies staff of the guest&rsquo;s arrival.</p>
+                <button class="btn sim__next" type="button" hidden>Next scenario &rarr;</button>
+              </div>
+            </div>
+            <div class="question scenario" hidden>
+              <p class="question__label">Scenario 5 of 9</p>
+              <p class="question__q" id="sim-q-5" tabindex="-1">A business wants to ask customers &ldquo;Are you satisfied with our service?&rdquo; without staff having to ask 100+ times a day. Which AI role should handle it?</p>
+              <div class="question__choices" role="group" aria-labelledby="sim-q-5">
+                <button class="choice" type="button">AI Knowledge Agent</button>
+                <button class="choice" type="button">AI Trainer</button>
+                <button class="choice" type="button">AI e-Services Agent</button>
+                <button class="choice" type="button" data-correct>AI Feedback Agent</button>
+              </div>
+              <div class="question__result" role="status" aria-live="polite">
+                <p class="question__verdict"></p>
+                <p class="question__explain" hidden>The AI Feedback Agent drives customer engagement and encourages feedback sharing, which frees up customer service officers.</p>
+                <button class="btn sim__next" type="button" hidden>Next scenario &rarr;</button>
+              </div>
+            </div>
+            <div class="question scenario" hidden>
+              <p class="question__label">Scenario 6 of 9</p>
+              <p class="question__q" id="sim-q-6" tabindex="-1">A diner wants dish suggestions that suit their taste. Which AI role should handle it?</p>
+              <div class="question__choices" role="group" aria-labelledby="sim-q-6">
+                <button class="choice" type="button" data-correct>AI Restaurant Assistant</button>
+                <button class="choice" type="button">AI Trainer</button>
+                <button class="choice" type="button">AI e-Services Agent</button>
+                <button class="choice" type="button">AI Knowledge Agent</button>
+              </div>
+              <div class="question__result" role="status" aria-live="polite">
+                <p class="question__verdict"></p>
+                <p class="question__explain" hidden>The AI Restaurant Assistant recommends dishes tailored to a customer&rsquo;s taste buds.</p>
+                <button class="btn sim__next" type="button" hidden>Next scenario &rarr;</button>
+              </div>
+            </div>
+            <div class="question scenario" hidden>
+              <p class="question__label">Scenario 7 of 9</p>
+              <p class="question__q" id="sim-q-7" tabindex="-1">A shopper would like someone to lead them to the chocolates section. Which AI role should handle it?</p>
+              <div class="question__choices" role="group" aria-labelledby="sim-q-7">
+                <button class="choice" type="button">AI Trainer</button>
+                <button class="choice" type="button">AI e-Services Agent</button>
+                <button class="choice" type="button" data-correct>AI Service Robot</button>
+                <button class="choice" type="button">AI Virtual Receptionist</button>
+              </div>
+              <div class="question__result" role="status" aria-live="polite">
+                <p class="question__verdict"></p>
+                <p class="question__explain" hidden>The AI Service Robot is a roving robot that engages customers and leads them to product sections.</p>
+                <button class="btn sim__next" type="button" hidden>Next scenario &rarr;</button>
+              </div>
+            </div>
+            <div class="question scenario" hidden>
+              <p class="question__label">Scenario 8 of 9</p>
+              <p class="question__q" id="sim-q-8" tabindex="-1">New staff need a course on operational skills at work. Which AI role should handle it?</p>
+              <div class="question__choices" role="group" aria-labelledby="sim-q-8">
+                <button class="choice" type="button">AI Feedback Agent</button>
+                <button class="choice" type="button" data-correct>AI Trainer</button>
+                <button class="choice" type="button">AI Service Robot</button>
+                <button class="choice" type="button">AI Restaurant Assistant</button>
+              </div>
+              <div class="question__result" role="status" aria-live="polite">
+                <p class="question__verdict"></p>
+                <p class="question__explain" hidden>The AI Trainer acts as a virtual trainer for staff courses on operational skills at work.</p>
+                <button class="btn sim__next" type="button" hidden>Next scenario &rarr;</button>
+              </div>
+            </div>
+            <div class="question scenario" hidden>
+              <p class="question__label">Scenario 9 of 9</p>
+              <p class="question__q" id="sim-q-9" tabindex="-1">A user needs help finding and using an online service, and has questions about it. Which AI role should handle it?</p>
+              <div class="question__choices" role="group" aria-labelledby="sim-q-9">
+                <button class="choice" type="button">AI Trainer</button>
+                <button class="choice" type="button">AI Service Robot</button>
+                <button class="choice" type="button">AI Feedback Agent</button>
+                <button class="choice" type="button" data-correct>AI e-Services Agent</button>
+              </div>
+              <div class="question__result" role="status" aria-live="polite">
+                <p class="question__verdict"></p>
+                <p class="question__explain" hidden>The AI e-Services Agent helps users navigate and access relevant e-services, and answers queries on related topics.</p>
+                <button class="btn sim__next" type="button" hidden>See my score</button>
+              </div>
+            </div>
+            <div class="sim__final" role="status" aria-live="polite" hidden>
+              <p class="sim__final-score">You scored <strong class="sim__final-points"></strong></p>
+              <p class="sim__final-message"></p>
+              <div class="quiz__actions">
+                <button class="btn sim__restart" type="button">Try again</button>
+                <a class="btn btn--ghost" href="#slide-4">Review the roles (slide 4)</a>
+              </div>
             </div>
           </div>
-          <div class="question scenario" hidden>
-            <p class="question__label">Scenario 2 of 9</p>
-            <p class="question__q" id="sim-q-2" tabindex="-1">A visitor in a shopping centre asks how to get to the bank on Level 3. Which AI role should handle it?</p>
-            <div class="question__choices" role="group" aria-labelledby="sim-q-2">
-              <button class="choice" type="button" data-correct>AI Concierge</button>
-              <button class="choice" type="button">AI Restaurant Assistant</button>
-              <button class="choice" type="button">AI Feedback Agent</button>
-              <button class="choice" type="button">AI Knowledge Agent</button>
-            </div>
-            <div class="question__result" role="status" aria-live="polite">
-              <p class="question__verdict"></p>
-              <p class="question__explain" hidden>The AI Concierge recommends and guides visitors to offices, dining and shopping hotspots.</p>
-              <button class="btn sim__next" type="button" hidden>Next scenario &rarr;</button>
-            </div>
-          </div>
-          <div class="question scenario" hidden>
-            <p class="question__label">Scenario 3 of 9</p>
-            <p class="question__q" id="sim-q-3" tabindex="-1">A staff member needs a quick answer about a company policy. Which AI role should handle it?</p>
-            <div class="question__choices" role="group" aria-labelledby="sim-q-3">
-              <button class="choice" type="button">AI Feedback Agent</button>
-              <button class="choice" type="button">AI Restaurant Assistant</button>
-              <button class="choice" type="button" data-correct>AI Knowledge Agent</button>
-              <button class="choice" type="button">AI Service Robot</button>
-            </div>
-            <div class="question__result" role="status" aria-live="polite">
-              <p class="question__verdict"></p>
-              <p class="question__explain" hidden>The AI Knowledge Agent gives staff immediate answers on enterprise knowledge, from corporate policies to operational procedures.</p>
-              <button class="btn sim__next" type="button" hidden>Next scenario &rarr;</button>
-            </div>
-          </div>
-          <div class="question scenario" hidden>
-            <p class="question__label">Scenario 4 of 9</p>
-            <p class="question__q" id="sim-q-4" tabindex="-1">A guest arrives for a meeting. Someone needs to register them and let their host know they are here. Which AI role should handle it?</p>
-            <div class="question__choices" role="group" aria-labelledby="sim-q-4">
-              <button class="choice" type="button">AI Trainer</button>
-              <button class="choice" type="button" data-correct>AI Virtual Receptionist</button>
-              <button class="choice" type="button">AI Feedback Agent</button>
-              <button class="choice" type="button">AI Restaurant Assistant</button>
-            </div>
-            <div class="question__result" role="status" aria-live="polite">
-              <p class="question__verdict"></p>
-              <p class="question__explain" hidden>The AI Virtual Receptionist receives and registers guests and notifies staff of the guest&rsquo;s arrival.</p>
-              <button class="btn sim__next" type="button" hidden>Next scenario &rarr;</button>
-            </div>
-          </div>
-          <div class="question scenario" hidden>
-            <p class="question__label">Scenario 5 of 9</p>
-            <p class="question__q" id="sim-q-5" tabindex="-1">A business wants to ask customers &ldquo;Are you satisfied with our service?&rdquo; without staff having to ask 100+ times a day. Which AI role should handle it?</p>
-            <div class="question__choices" role="group" aria-labelledby="sim-q-5">
-              <button class="choice" type="button">AI Knowledge Agent</button>
-              <button class="choice" type="button">AI Trainer</button>
-              <button class="choice" type="button">AI e-Services Agent</button>
-              <button class="choice" type="button" data-correct>AI Feedback Agent</button>
-            </div>
-            <div class="question__result" role="status" aria-live="polite">
-              <p class="question__verdict"></p>
-              <p class="question__explain" hidden>The AI Feedback Agent drives customer engagement and encourages feedback sharing, which frees up customer service officers.</p>
-              <button class="btn sim__next" type="button" hidden>Next scenario &rarr;</button>
-            </div>
-          </div>
-          <div class="question scenario" hidden>
-            <p class="question__label">Scenario 6 of 9</p>
-            <p class="question__q" id="sim-q-6" tabindex="-1">A diner wants dish suggestions that suit their taste. Which AI role should handle it?</p>
-            <div class="question__choices" role="group" aria-labelledby="sim-q-6">
-              <button class="choice" type="button" data-correct>AI Restaurant Assistant</button>
-              <button class="choice" type="button">AI Trainer</button>
-              <button class="choice" type="button">AI e-Services Agent</button>
-              <button class="choice" type="button">AI Knowledge Agent</button>
-            </div>
-            <div class="question__result" role="status" aria-live="polite">
-              <p class="question__verdict"></p>
-              <p class="question__explain" hidden>The AI Restaurant Assistant recommends dishes tailored to a customer&rsquo;s taste buds.</p>
-              <button class="btn sim__next" type="button" hidden>Next scenario &rarr;</button>
-            </div>
-          </div>
-          <div class="question scenario" hidden>
-            <p class="question__label">Scenario 7 of 9</p>
-            <p class="question__q" id="sim-q-7" tabindex="-1">A shopper would like someone to lead them to the chocolates section. Which AI role should handle it?</p>
-            <div class="question__choices" role="group" aria-labelledby="sim-q-7">
-              <button class="choice" type="button">AI Trainer</button>
-              <button class="choice" type="button">AI e-Services Agent</button>
-              <button class="choice" type="button" data-correct>AI Service Robot</button>
-              <button class="choice" type="button">AI Virtual Receptionist</button>
-            </div>
-            <div class="question__result" role="status" aria-live="polite">
-              <p class="question__verdict"></p>
-              <p class="question__explain" hidden>The AI Service Robot is a roving robot that engages customers and leads them to product sections.</p>
-              <button class="btn sim__next" type="button" hidden>Next scenario &rarr;</button>
-            </div>
-          </div>
-          <div class="question scenario" hidden>
-            <p class="question__label">Scenario 8 of 9</p>
-            <p class="question__q" id="sim-q-8" tabindex="-1">New staff need a course on operational skills at work. Which AI role should handle it?</p>
-            <div class="question__choices" role="group" aria-labelledby="sim-q-8">
-              <button class="choice" type="button">AI Feedback Agent</button>
-              <button class="choice" type="button" data-correct>AI Trainer</button>
-              <button class="choice" type="button">AI Service Robot</button>
-              <button class="choice" type="button">AI Restaurant Assistant</button>
-            </div>
-            <div class="question__result" role="status" aria-live="polite">
-              <p class="question__verdict"></p>
-              <p class="question__explain" hidden>The AI Trainer acts as a virtual trainer for staff courses on operational skills at work.</p>
-              <button class="btn sim__next" type="button" hidden>Next scenario &rarr;</button>
-            </div>
-          </div>
-          <div class="question scenario" hidden>
-            <p class="question__label">Scenario 9 of 9</p>
-            <p class="question__q" id="sim-q-9" tabindex="-1">A user needs help finding and using an online service, and has questions about it. Which AI role should handle it?</p>
-            <div class="question__choices" role="group" aria-labelledby="sim-q-9">
-              <button class="choice" type="button">AI Trainer</button>
-              <button class="choice" type="button">AI Service Robot</button>
-              <button class="choice" type="button">AI Feedback Agent</button>
-              <button class="choice" type="button" data-correct>AI e-Services Agent</button>
-            </div>
-            <div class="question__result" role="status" aria-live="polite">
-              <p class="question__verdict"></p>
-              <p class="question__explain" hidden>The AI e-Services Agent helps users navigate and access relevant e-services, and answers queries on related topics.</p>
-              <button class="btn sim__next" type="button" hidden>See my score</button>
-            </div>
-          </div>
-          <div class="sim__final" role="status" aria-live="polite" hidden>
-            <p class="sim__final-score">You scored <strong class="sim__final-points"></strong></p>
-            <p class="sim__final-message"></p>
-            <div class="quiz__actions">
-              <button class="btn sim__restart" type="button">Try again</button>
-              <a class="btn btn--ghost" href="#slide-4">Review the roles (slide 4)</a>
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
     </main>
   </div>
 
   <footer class="site-footer">
     <p>Frontline Roles for AI Co-Worker Agents &middot; a mini-course for the AI class</p>
-    <p><a href="#slide-1">Back to the top</a></p>
+    <p><a href="#main">Back to the top</a></p>
   </footer>
 </body>
 </html>

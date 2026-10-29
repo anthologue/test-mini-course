@@ -233,11 +233,21 @@ a {
   text-transform: uppercase;
 }
 
-.site-nav ol {
+.site-nav ol,
+.site-nav ul {
   list-style: none;
   padding: 0;
   display: grid;
   gap: 0.15rem;
+}
+
+.nav-title--spaced {
+  margin-top: 1.1rem;
+}
+
+/* The Quiz and Simulator entries are not numbered lessons. */
+.nav-extra a::before {
+  content: "\25B8";
 }
 
 .site-nav li {
@@ -804,6 +814,7 @@ figcaption {
 .tabs {
   display: flex;
   gap: 0.25rem;
+  margin-top: 1rem;
   border-bottom: 2px solid var(--border);
 }
 
@@ -837,8 +848,14 @@ figcaption {
   align-content: start;
 }
 
+/* The lesson tab holds the ten sections one after another, as plain page flow. */
+.tabpanel--flow {
+  display: block;
+}
+
 .to-quiz {
-  padding-top: 0.5rem;
+  padding: 1.5rem 0 0.5rem;
+  border-top: 1px solid var(--border);
 }
 
 /* ---------- Quiz (inside the Quiz tab) ---------- */
@@ -847,8 +864,9 @@ figcaption {
   gap: 1rem;
 }
 
-.quiz__intro {
+.quiz__progress {
   color: var(--muted);
+  font-weight: 600;
 }
 
 .quiz__summary {
@@ -954,7 +972,8 @@ figcaption {
     transform: none;
   }
 
-  .site-nav ol {
+  .site-nav ol,
+  .site-nav ul {
     grid-template-columns: 1fr 1fr;
   }
 }
@@ -986,7 +1005,8 @@ figcaption {
     box-shadow: none;
   }
 
-  .site-nav ol {
+  .site-nav ol,
+  .site-nav ul {
     grid-template-columns: 1fr;
   }
 

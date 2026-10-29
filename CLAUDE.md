@@ -7,11 +7,11 @@
 
 ## Project Structure
 
-A single scrolling page: one section per slide of the course deck (10 lessons), then a practice simulator.
+A single page with three tabs (Lesson, Quiz, Simulator). The Lesson tab has one section per slide of the course deck (10 sections).
 
 - `index.html` — the whole course page
 - `css/styles.css` — layout, colours, and the light/dark themes
-- `js/main.js` — theme toggle, menu, "current section" highlight, Lesson/Quiz tabs, quiz scoring, and the simulator
+- `js/main.js` — theme toggle, menu, "current section" highlight, the three tabs, quiz scoring, and the simulator
 - `images/` — pictures taken from the slide deck
 - `CLAUDE.md` — this file
 
@@ -26,7 +26,7 @@ Update this section whenever files or folders are added.
 
 ### Site structure
 
-One scrolling page with eleven sections: ten lessons (one per slide of the course deck) and a practice simulator:
+One page with three tabs at the top: **Lesson**, **Quiz** and **Simulator**. The Lesson tab is a scrolling page of ten sections, one per slide of the course deck:
 
 1. Course introduction
 2. Will AI take over my job?
@@ -38,22 +38,20 @@ One scrolling page with eleven sections: ten lessons (one per slide of the cours
 8. Tourism & attractions
 9. Retail challenges
 10. Retail AI agents
-11. Practice simulator
 
 How students move between sections:
 
-- Scroll down to read in order.
-- Or use the menu to jump to any section. It is a side list on desktop and a drop-down on tablet and phone, and it highlights the section being read.
+- Lesson tab (the default): scroll down to read in order, or use the menu to jump to any section. A "Take the quiz" button at the end switches to the Quiz tab.
+- Quiz tab: 8 multiple-choice questions on the whole course. Each answer shows right or wrong straight away, and the score appears once all 8 are answered. "Try again" starts over.
+- Simulator tab: 9 role-matching scenarios, one at a time, with instant feedback, then a final score and "Try again".
+- The menu lists the 10 lesson sections, then "Quiz" and "Simulator". Choosing any of them opens the right tab first. It is a side list on desktop and a drop-down on tablet and phone, and it highlights where you are.
 - The Dark mode switch is in the header on every screen size.
-- Each lesson (sections 1 to 10) has two tabs on the same page: **Lesson** (the slide's content) and **Quiz** (1 multiple-choice question). A "Take the quiz" button at the end of the lesson switches tabs.
-- The quiz shows right or wrong as soon as an answer is picked, then the score. A "Continue to the next section" link appears either way, and nothing ever blocks the student from moving on.
-- The simulator (section 11) shows 9 role-matching scenarios one at a time with instant feedback, then a final score and "Try again".
-- No sign-in, and answers are not saved. Without JavaScript the lessons still show in full, but the tabs, quizzes and simulator are hidden.
+- Everything stays on the one page. Nothing blocks the student from moving on, there is no sign-in, and answers are not saved. Without JavaScript the full lesson still shows, but the tabs, quiz and simulator are hidden.
 
 ### Phases
 
 - **Phase 1 – Course from the slides (built):** all ten slides as text sections with their images, plain-language notes, responsive layout, and the light/dark toggle.
-- **Phase 2 – Tabs, quizzes and simulator (built):** Lesson/Quiz tabs on every lesson, one scored question each, and the role-matching simulator.
+- **Phase 2 – Quiz and simulator tabs (built):** an 8-question scored quiz and the role-matching simulator, as tabs beside the lesson.
 - **Phase 3 – Publish:** turn on GitHub Pages and share the link with the class.
 - **Later:** nothing planned yet. Ask before adding anything.
 

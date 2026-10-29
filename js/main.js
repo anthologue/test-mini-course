@@ -132,84 +132,143 @@
       };
     }
 
-    // Lesson / Quiz tabs. Both are on the same page; one is shown at a time.
-    document.querySelectorAll('.tabs').forEach(function (tablist) {
-      var section = tablist.closest('.slide');
-      var tabs = Array.prototype.slice.call(tablist.querySelectorAll('[role="tab"]'));
+    // Course tabs: Lesson, Quiz and Simulator are all on this one page, and
+    // only one of them shows at a time. Answers stay while you switch tabs.
+    var tablist = document.querySelector('.tabs');
+    var tabs = Array.prototype.slice.call(tablist.querySelectorAll('[role="tab"]'));
 
-      function select(tab, options) {
-        tabs.forEach(function (other) {
-          var on = other === tab;
-          other.setAttribute('aria-selected', on ? 'true' : 'false');
-          other.tabIndex = on ? 0 : -1;
-          document.getElementById(other.getAttribute('aria-controls')).hidden = !on;
-        });
-        if (options && options.focus) {
-          tab.focus({ preventScroll: true });
-        }
-        if (options && options.scroll) {
-          tablist.scrollIntoView({ block: 'start' });
-        }
+    function selectTab(tab, options) {
+      tabs.forEach(function (other) {
+        var on = other === tab;
+        other.setAttribute('aria-selected', on ? 'true' : 'false');
+        other.tabIndex = on ? 0 : -1;
+        document.getElementById(other.getAttribute('aria-controls')).hidden = !on;
+      });
+      if (options && options.focus) {
+        tab.focus({ preventScroll: true });
       }
-
-      function tabFor(name) {
-        return tabs.filter(function (tab) { return tab.getAttribute('data-tab') === name; })[0];
+      if (options && options.scroll) {
+        tablist.scrollIntoView({ block: 'start' });
       }
+    }
 
-      tabs.forEach(function (tab, index) {
-        tab.addEventListener('click', function () {
-          select(tab, {});
-        });
+    function tabFor(name) {
+      return tabs.filter(function (tab) { return tab.getAttribute('data-tab') === name; })[0];
+    }
 
-        tab.addEventListener('keydown', function (event) {
-          var target = null;
-          if (event.key === 'ArrowRight') {
-            target = tabs[(index + 1) % tabs.length];
-          } else if (event.key === 'ArrowLeft') {
-            target = tabs[(index - 1 + tabs.length) % tabs.length];
-          } else if (event.key === 'Home') {
-            target = tabs[0];
-          } else if (event.key === 'End') {
-            target = tabs[tabs.length - 1];
-          }
-          if (target) {
-            event.preventDefault();
-            select(target, { focus: true });
-          }
-        });
+    tabs.forEach(function (tab, index) {
+      tab.addEventListener('click', function () {
+        selectTab(tab, {});
       });
 
-      // Buttons inside a section that switch its tab ("Take the quiz", "Review the lesson").
-      section.querySelectorAll('[data-tab-target]').forEach(function (button) {
-        button.addEventListener('click', function () {
-          select(tabFor(button.getAttribute('data-tab-target')), { focus: true, scroll: true });
-        });
+      tab.addEventListener('keydown', function (event) {
+        var target = null;
+        if (event.key === 'ArrowRight') {
+          target = tabs[(index + 1) % tabs.length];
+        } else if (event.key === 'ArrowLeft') {
+          target = tabs[(index - 1 + tabs.length) % tabs.length];
+        } else if (event.key === 'Home') {
+          target = tabs[0];
+        } else if (event.key === 'End') {
+          target = tabs[tabs.length - 1];
+        }
+        if (target) {
+          event.preventDefault();
+          selectTab(target, { focus: true });
+        }
       });
     });
 
-    // Quizzes: once every question is answered, show the score.
-    document.querySelectorAll('.quiz').forEach(function (quiz) {
-      var questions = quiz.querySelectorAll('.question');
-      var summary = quiz.querySelector('.quiz__summary');
-      var total = questions.length;
-      var right = 0;
-      var answered = 0;
-
-      questions.forEach(function (question) {
-        setUpQuestion(question, function (isRight) {
-          answered += 1;
-          if (isRight) {
-            right += 1;
-          }
-          if (answered === total) {
-            quiz.querySelector('.quiz__points').textContent = right + ' of ' + total;
-            quiz.querySelector('.quiz__message').textContent = right === total
-              ? 'Well done! You got everything right.'
-              : 'Have another look at the lesson, then carry on when you are ready.';
-            summary.hidden = false;
-          }
-        });
+    // Buttons that switch tab ("Take the quiz", "Review the lesson", "Try the simulator").
+    document.querySelectorAll('[data-tab-target]').forEach(function (button) {
+      button.addEventListener('click', function () {
+        selectTab(tabFor(button.getAttribute('data-tab-target')), { focus: true, scroll: true });
       });
+    });
+
+    // Links inside the page (menu, "Review the roles", ...) may point into a tab
+    // that is not showing. Open that tab first, then go there.
+    function tabForPanel(panel) {
+      return document.getElementById(panel.getAttribute('aria-labelledby'));
+    }
+
+    function openTarget(id, event) {
+      var target = document.getElementById(id);
+      if (!target) {
+        return;
+      }
+      var panel = target.closest('.tabpanel');
+      var isTabSection = id === 'quiz' || id === 'simulator';
+      if (!isTabSection && !(panel && panel.hidden)) {
+        return; // an ordinary link on the visible tab: let the browser scroll
+      }
+      if (event) {
+        event.preventDefault();
+      }
+      if (panel && panel.hidden) {
+        selectTab(tabForPanel(panel), {});
+      }
+      (isTabSection ? tablist : target).scrollIntoView({ block: 'start' });
+      try {
+        window.history.replaceState(null, '', '#' + id);
+      } catch (e) {
+        // The address bar is only a nicety.
+      }
+    }
+
+    document.addEventListener('click', function (event) {
+      var link = event.target.closest('a[href^="#"]');
+      if (link && link.getAttribute('href').length > 1) {
+        openTarget(link.getAttribute('href').slice(1), event);
+      }
+    });
+
+    window.addEventListener('hashchange', function () {
+      openTarget(decodeURIComponent(window.location.hash.slice(1)), null);
+    });
+
+    if (window.location.hash.length > 1) {
+      openTarget(decodeURIComponent(window.location.hash.slice(1)), null);
+    }
+
+    // Quiz: once every question is answered, show the score.
+    var quiz = document.querySelector('.quiz');
+    var quizQuestions = Array.prototype.slice.call(quiz.querySelectorAll('.question'));
+    var quizSummary = quiz.querySelector('.quiz__summary');
+    var quizAnswered = quiz.querySelector('.quiz__answered');
+    var quizTotal = quizQuestions.length;
+    var quizRight = 0;
+    var quizCount = 0;
+
+    var quizControllers = quizQuestions.map(function (question) {
+      return setUpQuestion(question, function (isRight) {
+        quizCount += 1;
+        if (isRight) {
+          quizRight += 1;
+        }
+        quizAnswered.textContent = quizCount;
+        if (quizCount === quizTotal) {
+          quiz.querySelector('.quiz__points').textContent = quizRight + ' of ' + quizTotal;
+          quiz.querySelector('.quiz__message').textContent = quizRight === quizTotal
+            ? 'Perfect score! You got every question right.'
+            : quizRight >= Math.ceil(quizTotal * 0.75)
+              ? 'Well done. Look back at the lesson for the ones you missed.'
+              : 'Have another look at the lesson, then try again.';
+          quizSummary.hidden = false;
+        }
+      });
+    });
+
+    quiz.querySelector('.quiz__restart').addEventListener('click', function () {
+      quizRight = 0;
+      quizCount = 0;
+      quizAnswered.textContent = '0';
+      quizSummary.hidden = true;
+      quizControllers.forEach(function (controller) {
+        controller.reset();
+      });
+      tablist.scrollIntoView({ block: 'start' });
+      quizQuestions[0].querySelector('.question__q').focus({ preventScroll: true });
     });
 
     // Role-matching simulator: one scenario at a time, then a final score.
