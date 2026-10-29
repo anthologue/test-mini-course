@@ -651,8 +651,12 @@ figcaption {
   color: var(--muted);
 }
 
-/* ---------- Quick check (one question at the end of each section) ---------- */
-.checkin {
+/* ---------- Questions (lesson quizzes and the simulator) ---------- */
+[hidden] {
+  display: none !important;
+}
+
+.question {
   display: grid;
   gap: 0.75rem;
   padding: 1.1rem 1.2rem 1.25rem;
@@ -662,12 +666,13 @@ figcaption {
   max-width: 46rem;
 }
 
-/* The questions need JavaScript to check answers, so hide them without it. */
-.no-js .checkin {
-  display: none;
+/* Quizzes, tabs and the simulator need JavaScript, so hide them without it.
+   (The lesson content is then simply shown in full.) */
+.no-js .needs-js {
+  display: none !important;
 }
 
-.checkin__label {
+.question__label {
   color: var(--accent-2);
   font-size: 0.8125rem;
   font-weight: 700;
@@ -675,13 +680,13 @@ figcaption {
   text-transform: uppercase;
 }
 
-.checkin__q {
+.question__q {
   font-size: 1.15rem;
   font-weight: 700;
   line-height: 1.4;
 }
 
-.checkin__choices {
+.question__choices {
   display: grid;
   gap: 0.5rem;
 }
@@ -744,39 +749,152 @@ figcaption {
   color: var(--bad);
 }
 
-.checkin__result {
+.question__result {
   display: grid;
   gap: 0.6rem;
 }
 
-.checkin__verdict {
+.question__verdict {
   font-weight: 700;
 }
 
-.checkin__verdict.is-correct {
+.question__verdict.is-correct {
   color: var(--good);
 }
 
-.checkin__verdict.is-wrong {
+.question__verdict.is-wrong {
   color: var(--bad);
 }
 
-.checkin__explain {
+.question__explain {
   color: var(--muted);
 }
 
-.checkin__next {
-  justify-self: start;
-  padding: 0.55rem 1rem;
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.55rem 1.15rem;
   background: var(--accent);
   color: var(--accent-ink);
+  border: 2px solid var(--accent);
   border-radius: 999px;
+  font: inherit;
   font-weight: 700;
   text-decoration: none;
+  cursor: pointer;
 }
 
-.checkin__next:hover {
+.btn:hover {
   filter: brightness(1.08);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--accent);
+}
+
+.sim__next {
+  justify-self: start;
+}
+
+/* ---------- Lesson / Quiz tabs ---------- */
+.tabs {
+  display: flex;
+  gap: 0.25rem;
+  border-bottom: 2px solid var(--border);
+}
+
+.tab {
+  min-height: 2.75rem;
+  padding: 0.55rem 1.2rem;
+  margin-bottom: -2px;
+  background: none;
+  color: var(--muted);
+  border: 0;
+  border-bottom: 3px solid transparent;
+  border-radius: 8px 8px 0 0;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.tab:hover {
+  color: var(--text);
+  background: var(--soft);
+}
+
+.tab[aria-selected="true"] {
+  color: var(--text);
+  border-bottom-color: var(--accent);
+}
+
+.tabpanel {
+  display: grid;
+  gap: 1.25rem;
+  align-content: start;
+}
+
+.to-quiz {
+  padding-top: 0.5rem;
+}
+
+/* ---------- Quiz (inside the Quiz tab) ---------- */
+.quiz {
+  display: grid;
+  gap: 1rem;
+}
+
+.quiz__intro {
+  color: var(--muted);
+}
+
+.quiz__summary {
+  display: grid;
+  gap: 0.6rem;
+  padding: 1rem 1.2rem;
+  background: var(--soft);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  max-width: 46rem;
+}
+
+.quiz__score {
+  font-size: 1.2rem;
+}
+
+.quiz__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  padding-top: 0.25rem;
+}
+
+/* ---------- Simulator ---------- */
+.sim {
+  display: grid;
+  gap: 1rem;
+  max-width: 46rem;
+}
+
+.sim__score {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.sim__final {
+  display: grid;
+  gap: 0.6rem;
+  padding: 1.1rem 1.2rem 1.25rem;
+  background: var(--soft);
+  border: 2px solid var(--accent-2);
+  border-radius: var(--radius);
+}
+
+.sim__final-score {
+  font-size: 1.35rem;
 }
 
 /* ---------- Footer ---------- */

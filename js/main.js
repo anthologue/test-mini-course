@@ -73,13 +73,14 @@
       }
     });
 
-    // Quick check questions: show right or wrong straight away, then offer the
-    // next section. Nothing is locked or saved, and the student can always scroll on.
-    document.querySelectorAll('.checkin').forEach(function (checkin) {
-      var choices = Array.prototype.slice.call(checkin.querySelectorAll('.choice'));
-      var verdict = checkin.querySelector('.checkin__verdict');
-      var explain = checkin.querySelector('.checkin__explain');
-      var next = checkin.querySelector('.checkin__next');
+    // Questions (used by the lesson quizzes and by the simulator): show right or
+    // wrong as soon as a choice is picked. Nothing is saved between visits.
+    // Returns reset() so the simulator can start over.
+    function setUpQuestion(question, onAnswered) {
+      var choices = Array.prototype.slice.call(question.querySelectorAll('.choice'));
+      var verdict = question.querySelector('.question__verdict');
+      var explain = question.querySelector('.question__explain');
+      var next = question.querySelector('.sim__next');
       var answered = false;
 
       choices.forEach(function (choice) {
@@ -99,17 +100,185 @@
 
           if (isRight) {
             verdict.textContent = 'Correct!';
-            verdict.className = 'checkin__verdict is-correct';
+            verdict.className = 'question__verdict is-correct';
           } else {
             choice.classList.add('is-wrong');
             verdict.textContent = 'Not quite. The correct answer is marked with a tick.';
-            verdict.className = 'checkin__verdict is-wrong';
+            verdict.className = 'question__verdict is-wrong';
           }
 
           explain.hidden = false;
-          next.hidden = false;
+          if (next) {
+            next.hidden = false;
+          }
+          onAnswered(isRight);
         });
       });
+
+      return {
+        reset: function () {
+          answered = false;
+          choices.forEach(function (choice) {
+            choice.removeAttribute('aria-disabled');
+            choice.classList.remove('is-correct', 'is-wrong');
+          });
+          verdict.textContent = '';
+          verdict.className = 'question__verdict';
+          explain.hidden = true;
+          if (next) {
+            next.hidden = true;
+          }
+        }
+      };
+    }
+
+    // Lesson / Quiz tabs. Both are on the same page; one is shown at a time.
+    document.querySelectorAll('.tabs').forEach(function (tablist) {
+      var section = tablist.closest('.slide');
+      var tabs = Array.prototype.slice.call(tablist.querySelectorAll('[role="tab"]'));
+
+      function select(tab, options) {
+        tabs.forEach(function (other) {
+          var on = other === tab;
+          other.setAttribute('aria-selected', on ? 'true' : 'false');
+          other.tabIndex = on ? 0 : -1;
+          document.getElementById(other.getAttribute('aria-controls')).hidden = !on;
+        });
+        if (options && options.focus) {
+          tab.focus({ preventScroll: true });
+        }
+        if (options && options.scroll) {
+          tablist.scrollIntoView({ block: 'start' });
+        }
+      }
+
+      function tabFor(name) {
+        return tabs.filter(function (tab) { return tab.getAttribute('data-tab') === name; })[0];
+      }
+
+      tabs.forEach(function (tab, index) {
+        tab.addEventListener('click', function () {
+          select(tab, {});
+        });
+
+        tab.addEventListener('keydown', function (event) {
+          var target = null;
+          if (event.key === 'ArrowRight') {
+            target = tabs[(index + 1) % tabs.length];
+          } else if (event.key === 'ArrowLeft') {
+            target = tabs[(index - 1 + tabs.length) % tabs.length];
+          } else if (event.key === 'Home') {
+            target = tabs[0];
+          } else if (event.key === 'End') {
+            target = tabs[tabs.length - 1];
+          }
+          if (target) {
+            event.preventDefault();
+            select(target, { focus: true });
+          }
+        });
+      });
+
+      // Buttons inside a section that switch its tab ("Take the quiz", "Review the lesson").
+      section.querySelectorAll('[data-tab-target]').forEach(function (button) {
+        button.addEventListener('click', function () {
+          select(tabFor(button.getAttribute('data-tab-target')), { focus: true, scroll: true });
+        });
+      });
+    });
+
+    // Quizzes: once every question is answered, show the score.
+    document.querySelectorAll('.quiz').forEach(function (quiz) {
+      var questions = quiz.querySelectorAll('.question');
+      var summary = quiz.querySelector('.quiz__summary');
+      var total = questions.length;
+      var right = 0;
+      var answered = 0;
+
+      questions.forEach(function (question) {
+        setUpQuestion(question, function (isRight) {
+          answered += 1;
+          if (isRight) {
+            right += 1;
+          }
+          if (answered === total) {
+            quiz.querySelector('.quiz__points').textContent = right + ' of ' + total;
+            quiz.querySelector('.quiz__message').textContent = right === total
+              ? 'Well done! You got everything right.'
+              : 'Have another look at the lesson, then carry on when you are ready.';
+            summary.hidden = false;
+          }
+        });
+      });
+    });
+
+    // Role-matching simulator: one scenario at a time, then a final score.
+    document.querySelectorAll('.sim').forEach(function (sim) {
+      var scenarios = Array.prototype.slice.call(sim.querySelectorAll('.scenario'));
+      var scoreLabel = sim.querySelector('.sim__score');
+      var points = sim.querySelector('.sim__points');
+      var final = sim.querySelector('.sim__final');
+      var total = scenarios.length;
+      var current = 0;
+      var score = 0;
+
+      function show(index) {
+        scenarios.forEach(function (scenario, i) {
+          scenario.hidden = i !== index;
+        });
+        current = index;
+      }
+
+      function finish() {
+        scenarios.forEach(function (scenario) {
+          scenario.hidden = true;
+        });
+        scoreLabel.hidden = true;
+        sim.querySelector('.sim__final-points').textContent = score + ' of ' + total;
+        sim.querySelector('.sim__final-message').textContent = score === total
+          ? 'Perfect! You matched every situation to the right AI role.'
+          : score >= Math.ceil(total * 0.7)
+            ? 'Nice work. Check slide 4 for the roles you missed, then try again.'
+            : 'Worth another look at slide 4 (Roles for AI co-workers), then try again.';
+        final.hidden = false;
+        sim.querySelector('.sim__restart').focus({ preventScroll: true });
+      }
+
+      var controllers = scenarios.map(function (scenario, index) {
+        var controller = setUpQuestion(scenario, function (isRight) {
+          if (isRight) {
+            score += 1;
+          }
+          points.textContent = score;
+        });
+
+        scenario.querySelector('.sim__next').addEventListener('click', function () {
+          if (index === total - 1) {
+            finish();
+          } else {
+            show(index + 1);
+            var heading = scenarios[index + 1].querySelector('.question__q');
+            heading.focus({ preventScroll: true });
+            scenarios[index + 1].scrollIntoView({ block: 'nearest' });
+          }
+        });
+
+        return controller;
+      });
+
+      sim.querySelector('.sim__restart').addEventListener('click', function () {
+        score = 0;
+        points.textContent = '0';
+        controllers.forEach(function (controller) {
+          controller.reset();
+        });
+        final.hidden = true;
+        scoreLabel.hidden = false;
+        show(0);
+        scenarios[0].querySelector('.question__q').focus({ preventScroll: true });
+      });
+
+      show(0);
     });
 
     // Highlight the section being read
