@@ -73,6 +73,45 @@
       }
     });
 
+    // Quick check questions: show right or wrong straight away, then offer the
+    // next section. Nothing is locked or saved, and the student can always scroll on.
+    document.querySelectorAll('.checkin').forEach(function (checkin) {
+      var choices = Array.prototype.slice.call(checkin.querySelectorAll('.choice'));
+      var verdict = checkin.querySelector('.checkin__verdict');
+      var explain = checkin.querySelector('.checkin__explain');
+      var next = checkin.querySelector('.checkin__next');
+      var answered = false;
+
+      choices.forEach(function (choice) {
+        choice.addEventListener('click', function () {
+          if (answered) {
+            return;
+          }
+          answered = true;
+
+          var isRight = choice.hasAttribute('data-correct');
+          choices.forEach(function (other) {
+            other.setAttribute('aria-disabled', 'true');
+            if (other.hasAttribute('data-correct')) {
+              other.classList.add('is-correct');
+            }
+          });
+
+          if (isRight) {
+            verdict.textContent = 'Correct!';
+            verdict.className = 'checkin__verdict is-correct';
+          } else {
+            choice.classList.add('is-wrong');
+            verdict.textContent = 'Not quite. The correct answer is marked with a tick.';
+            verdict.className = 'checkin__verdict is-wrong';
+          }
+
+          explain.hidden = false;
+          next.hidden = false;
+        });
+      });
+    });
+
     // Highlight the section being read
     function setCurrent(id) {
       links.forEach(function (link) {

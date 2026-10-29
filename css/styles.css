@@ -11,6 +11,10 @@
   --border: #e5dfee;
   --soft: #f3ecfa;
   --track: #8d87a0;
+  --good: #17703f;
+  --good-bg: #e4f5ea;
+  --bad: #b3261e;
+  --bad-bg: #fdebe9;
   --shadow: 0 1px 2px rgba(30, 20, 50, 0.06), 0 6px 18px rgba(30, 20, 50, 0.06);
 
   --header-h: 3.5rem;
@@ -28,6 +32,10 @@
   --accent-2: #b99cff;
   --border: #322c43;
   --soft: #262036;
+  --good: #6fdc9b;
+  --good-bg: #14301f;
+  --bad: #ff9a92;
+  --bad-bg: #3b1a18;
   --shadow: none;
 }
 
@@ -641,6 +649,134 @@ figcaption {
 .plain dd {
   margin: 0;
   color: var(--muted);
+}
+
+/* ---------- Quick check (one question at the end of each section) ---------- */
+.checkin {
+  display: grid;
+  gap: 0.75rem;
+  padding: 1.1rem 1.2rem 1.25rem;
+  background: var(--surface);
+  border: 2px solid var(--accent-2);
+  border-radius: var(--radius);
+  max-width: 46rem;
+}
+
+/* The questions need JavaScript to check answers, so hide them without it. */
+.no-js .checkin {
+  display: none;
+}
+
+.checkin__label {
+  color: var(--accent-2);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.checkin__q {
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.checkin__choices {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.choice {
+  display: flex;
+  gap: 0.6rem;
+  align-items: baseline;
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.6rem 0.9rem;
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.choice:hover {
+  border-color: var(--accent-2);
+}
+
+/* Once answered the choices stop reacting but stay focusable. */
+.choice[aria-disabled="true"] {
+  cursor: default;
+}
+
+.choice[aria-disabled="true"]:hover {
+  border-color: var(--border);
+}
+
+.choice.is-correct,
+.choice.is-correct:hover {
+  background: var(--good-bg);
+  border-color: var(--good);
+  font-weight: 600;
+}
+
+.choice.is-wrong,
+.choice.is-wrong:hover {
+  background: var(--bad-bg);
+  border-color: var(--bad);
+}
+
+.choice.is-correct::before,
+.choice.is-wrong::before {
+  flex: none;
+  font-weight: 700;
+}
+
+.choice.is-correct::before {
+  content: "\2713";
+  color: var(--good);
+}
+
+.choice.is-wrong::before {
+  content: "\2717";
+  color: var(--bad);
+}
+
+.checkin__result {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.checkin__verdict {
+  font-weight: 700;
+}
+
+.checkin__verdict.is-correct {
+  color: var(--good);
+}
+
+.checkin__verdict.is-wrong {
+  color: var(--bad);
+}
+
+.checkin__explain {
+  color: var(--muted);
+}
+
+.checkin__next {
+  justify-self: start;
+  padding: 0.55rem 1rem;
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.checkin__next:hover {
+  filter: brightness(1.08);
 }
 
 /* ---------- Footer ---------- */

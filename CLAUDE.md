@@ -11,7 +11,7 @@ A single scrolling page with one section per slide of the course deck (10 slides
 
 - `index.html` — the whole course page
 - `css/styles.css` — layout, colours, and the light/dark themes
-- `js/main.js` — theme toggle, menu, and "current section" highlight
+- `js/main.js` — theme toggle, menu, "current section" highlight, and quick-check answers
 - `images/` — pictures taken from the slide deck
 - `CLAUDE.md` — this file
 
@@ -44,13 +44,15 @@ How students move between sections:
 - Scroll down to read in order.
 - Or use the menu to jump to any section. It is a side list on desktop and a drop-down on tablet and phone, and it highlights the section being read.
 - The Dark mode switch is in the header on every screen size.
-- Reading only: no quizzes or sign-in.
+- At the end of each section, one "Quick check" question shows right or wrong straight away. It stays inside that section (no new page or quiz screen) and never blocks the student from moving on.
+- No sign-in, and answers are not saved.
 
 ### Phases
 
 - **Phase 1 – Course from the slides (built):** all ten slides as text sections with their images, plain-language notes, responsive layout, and the light/dark toggle.
-- **Phase 2 – Publish:** turn on GitHub Pages and share the link with the class.
-- **Later:** nothing planned yet. Ask before adding anything (a quiz was considered and left out for now).
+- **Phase 2 – Quick checks (built):** one multiple-choice question per section, with instant feedback and a "continue" link.
+- **Phase 3 – Publish:** turn on GitHub Pages and share the link with the class.
+- **Later:** nothing planned yet. Ask before adding anything.
 
 ## Rules for Claude
 
