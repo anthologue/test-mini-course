@@ -24,18 +24,29 @@ Update this section whenever files or folders are added.
 
 ### Site structure
 
-One long scrolling page for beginners, with one section per slide (3–5 sections, in slide order; titles to be filled in once the slides arrive). Each section has the slide's text and images plus a short "In plain words" note.
+One long scrolling page for beginners, with one section per slide of the deck (10 sections, in slide order). Each section has the slide's key points, its picture, and a short "In plain words" note.
+
+1. Course introduction
+2. Will AI take over my job?
+3. Frontline AI agents
+4. Roles for AI co-workers
+5. Job re-design & re-skilling
+6. Customer service
+7. Office concierge
+8. Tourism & attractions
+9. Retail challenges
+10. Retail AI agents
 
 How students move between sections:
 
 - Scroll down to read in order.
-- Use the menu to jump to any section: a side list on desktop, a drop-down on tablet and phone. It highlights where you are.
+- Use the menu to jump to any section (JavaScript scrolls to it, on the same page): a side list on desktop, a drop-down on tablet and phone. It highlights where you are.
 - The light/dark switch is in the header on every screen size.
 - Reading only: no quiz, no sign-in, nothing saved. Without JavaScript the full lesson still shows.
 
 ### Phases
 
-- **Phase 1 – Course from my slides:** ask for the slides (PDF or PowerPoint) first, then build all sections with images, plain-language notes, responsive layout and the light/dark toggle.
+- **Phase 1 – Course from my slides (built, plain styling):** all ten sections with images, plain-language notes, responsive layout and the light/dark toggle. The slide deck itself is not kept in the repository. Visual design comes next.
 - **Phase 2 – Publish:** share the finished page with students.
 - **Later:** nothing planned yet. Ask before adding anything.
 
