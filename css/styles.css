@@ -203,6 +203,49 @@ dd { margin-left: 1.25rem; }
 .quiz-score:focus { outline: none; }
 .quiz-score-text { margin-top: 0; font-size: 1.25rem; }
 
+/* Simulator */
+.sim-step {
+  margin: 1.25rem 0;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+}
+
+.sim-progress {
+  margin-top: 0;
+  font-weight: bold;
+}
+.sim-progress:focus { outline: none; }
+
+.sim-option {
+  display: block;
+  width: 100%;
+  margin: 0.4rem 0;
+  text-align: left;
+}
+.sim-option:disabled { color: var(--text); cursor: default; }
+.sim-option.is-right { border-color: var(--text); border-width: 2px; font-weight: bold; }
+.sim-option.is-right::before { content: "\2713  "; }
+.sim-option.is-wrong::before { content: "\2717  "; }
+
+.sim-result,
+.sim-score-text { font-weight: bold; }
+.sim-result { margin: 0.75rem 0 0; }
+.sim-result:empty { display: none; }
+.sim-result:focus { outline: none; }
+
+.sim-next { margin-top: 0.5rem; }
+
+.sim-score {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+}
+.sim-score:focus { outline: none; }
+.sim-score-text { margin-top: 0; font-size: 1.25rem; }
+
 /* Check-in question at the end of each section */
 .check {
   margin: 2rem 0;

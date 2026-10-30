@@ -58,7 +58,11 @@
 
     // Tabs: Lesson and Quiz share the one page
     var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
-    var panels = { lesson: document.getElementById('panel-lesson'), quiz: document.getElementById('panel-quiz') };
+    var panels = {
+      lesson: document.getElementById('panel-lesson'),
+      quiz: document.getElementById('panel-quiz'),
+      simulator: document.getElementById('panel-simulator')
+    };
     var lessonSections = sections.filter(function (s) { return panels.lesson.contains(s); });
 
     function showTab(name) {
@@ -100,8 +104,9 @@
       var target = document.getElementById(id);
       if (!target) { return; }
       // Open the tab the section lives in first
-      if (panels.quiz.contains(target)) { showTab('quiz'); }
-      else if (panels.lesson.contains(target)) { showTab('lesson'); }
+      Object.keys(panels).forEach(function (name) {
+        if (panels[name].contains(target)) { showTab(name); }
+      });
       target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
       var heading = target.querySelector('h1, h2');
       heading.setAttribute('tabindex', '-1');
@@ -194,6 +199,74 @@
       document.getElementById('title-quiz').scrollIntoView();
     });
 
+    // Simulator: one scenario at a time, marked as soon as a role is chosen
+    var simSteps = Array.prototype.slice.call(document.querySelectorAll('.sim-step'));
+    var simScore = document.querySelector('.sim-score');
+    var simIndex = 0;
+    var simCorrect = 0;
+
+    function showSimStep(i) {
+      simIndex = i;
+      simSteps.forEach(function (s, j) { s.hidden = j !== i; });
+    }
+
+    document.querySelector('.sim-steps').addEventListener('click', function (e) {
+      var step = e.target.closest('.sim-step');
+      var choice = e.target.closest('.sim-option');
+      var next = e.target.closest('.sim-next');
+
+      if (choice && !choice.disabled) {
+        var right = step.querySelector('[data-correct]');
+        var isRight = choice === right;
+        step.querySelectorAll('.sim-option').forEach(function (b) { b.disabled = true; });
+        right.classList.add('is-right');
+        if (!isRight) { choice.classList.add('is-wrong'); }
+        var result = step.querySelector('.sim-result');
+        result.className = 'sim-result ' + (isRight ? 'correct' : 'wrong');
+        result.textContent = isRight
+          ? '✓ Correct!'
+          : '✗ Not quite. The answer is: ' + right.textContent;
+        step.querySelector('.sim-why').hidden = false;
+        step.querySelector('.sim-next').hidden = false;
+        if (isRight) { simCorrect += 1; }
+        result.focus();
+      }
+
+      if (next) {
+        if (simIndex < simSteps.length - 1) {
+          showSimStep(simIndex + 1);
+          simSteps[simIndex].querySelector('.sim-progress').focus();
+        } else {
+          simSteps.forEach(function (s) { s.hidden = true; });
+          simScore.querySelector('.sim-score-text').textContent =
+            'You matched ' + simCorrect + ' of ' + simSteps.length + ' scenarios.';
+          simScore.hidden = false;
+          simScore.focus();
+        }
+      }
+    });
+
+    simSteps.forEach(function (s) { s.querySelector('.sim-progress').tabIndex = -1; });
+
+    document.querySelector('.sim-retry').addEventListener('click', function () {
+      simSteps.forEach(function (s) {
+        s.querySelectorAll('.sim-option').forEach(function (b) {
+          b.disabled = false;
+          b.classList.remove('is-right', 'is-wrong');
+        });
+        s.querySelector('.sim-result').textContent = '';
+        s.querySelector('.sim-result').className = 'sim-result';
+        s.querySelector('.sim-why').hidden = true;
+        s.querySelector('.sim-next').hidden = true;
+      });
+      simCorrect = 0;
+      simScore.hidden = true;
+      showSimStep(0);
+      document.getElementById('title-simulator').scrollIntoView();
+    });
+
+    showSimStep(0);
+
     // Highlight the section being read
     function setCurrent(index) {
       links.forEach(function (a, i) {
@@ -203,9 +276,12 @@
     }
 
     function updateCurrent() {
-      if (!panels.quiz.hidden) {
-        setCurrent(links.length - 1);
-        return;
+      // On the Quiz and Simulator tabs, highlight that tab's own menu entry
+      for (var name in panels) {
+        if (name !== 'lesson' && !panels[name].hidden) {
+          setCurrent(links.indexOf(nav.querySelector('a[href="#' + name + '"]')));
+          return;
+        }
       }
       var line = window.innerHeight * 0.3;
       var current = 0;

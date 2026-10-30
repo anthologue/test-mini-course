@@ -36,6 +36,7 @@
       <p class="nav-title needs-js">Practice</p>
       <ul class="needs-js">
         <li><a href="#quiz">Quiz</a></li>
+        <li><a href="#simulator">Simulator</a></li>
       </ul>
     </nav>
 
@@ -44,6 +45,7 @@
       <div class="tabs needs-js" role="tablist" aria-label="Course views">
         <button class="tab" type="button" role="tab" id="tab-lesson" data-tab="lesson" aria-selected="true" aria-controls="panel-lesson">Lesson</button>
         <button class="tab" type="button" role="tab" id="tab-quiz" data-tab="quiz" aria-selected="false" aria-controls="panel-quiz" tabindex="-1">Quiz</button>
+        <button class="tab" type="button" role="tab" id="tab-simulator" data-tab="simulator" aria-selected="false" aria-controls="panel-simulator" tabindex="-1">Simulator</button>
       </div>
 
       <div id="panel-lesson" role="tabpanel" aria-labelledby="tab-lesson">
@@ -412,7 +414,7 @@
           </form>
         </section>
 
-        <p class="needs-js">Finished reading? <button type="button" data-tab="quiz">Take the quiz</button></p>
+        <p class="needs-js">Finished reading? <button type="button" data-tab="quiz">Take the quiz</button> <button type="button" data-tab="simulator">Try the simulator</button></p>
       </div>
 
       <div id="panel-quiz" role="tabpanel" aria-labelledby="tab-quiz" hidden>
@@ -488,6 +490,145 @@
           <div class="quiz-score" role="status" tabindex="-1" hidden>
             <p class="quiz-score-text"></p>
             <button type="button" class="quiz-retry">Try again</button>
+          </div>
+        </section>
+      </div>
+
+      <div id="panel-simulator" role="tabpanel" aria-labelledby="tab-simulator" hidden>
+        <section id="simulator" aria-labelledby="title-simulator">
+          <h2 id="title-simulator">Role-matching simulator</h2>
+          <p>Practise what you have learned. You will see 9 everyday situations, one at a time. For each, choose which AI role should handle it. You will see straight away whether you were right.</p>
+          <div class="sim-steps">
+          <div class="sim-step" hidden>
+            <p class="sim-progress">Scenario 1 of 9</p>
+            <p>A diner at a restaurant cannot decide what to order. They want a dish that suits their taste.</p>
+            <p>Which AI role should handle this?</p>
+            <div class="sim-options">
+              <button type="button" class="sim-option">AI Trainer</button>
+              <button type="button" class="sim-option" data-correct>AI Restaurant Assistant</button>
+              <button type="button" class="sim-option">AI Feedback Agent</button>
+              <button type="button" class="sim-option">AI Knowledge Agent</button>
+            </div>
+            <p class="sim-result" role="status" tabindex="-1"></p>
+            <p class="sim-why" hidden>The AI Restaurant Assistant recommends dishes tailored to a customer&rsquo;s taste.</p>
+            <button type="button" class="sim-next" hidden>Next scenario</button>
+          </div>
+          <div class="sim-step" hidden>
+            <p class="sim-progress">Scenario 2 of 9</p>
+            <p>A new employee wants to know what the company policy says about leave.</p>
+            <p>Which AI role should handle this?</p>
+            <div class="sim-options">
+              <button type="button" class="sim-option" data-correct>AI Knowledge Agent</button>
+              <button type="button" class="sim-option">AI Product Agent</button>
+              <button type="button" class="sim-option">AI Virtual Receptionist</button>
+              <button type="button" class="sim-option">AI Service Robot</button>
+            </div>
+            <p class="sim-result" role="status" tabindex="-1"></p>
+            <p class="sim-why" hidden>The AI Knowledge Agent gives staff quick answers on enterprise knowledge, from company policies to how things are done.</p>
+            <button type="button" class="sim-next" hidden>Next scenario</button>
+          </div>
+          <div class="sim-step" hidden>
+            <p class="sim-progress">Scenario 3 of 9</p>
+            <p>A company wants a virtual teacher to run a course on operational skills for its staff.</p>
+            <p>Which AI role should handle this?</p>
+            <div class="sim-options">
+              <button type="button" class="sim-option">AI Concierge</button>
+              <button type="button" class="sim-option">AI e-Services Agent</button>
+              <button type="button" class="sim-option" data-correct>AI Trainer</button>
+              <button type="button" class="sim-option">AI Product Agent</button>
+            </div>
+            <p class="sim-result" role="status" tabindex="-1"></p>
+            <p class="sim-why" hidden>The AI Trainer acts as a virtual trainer in staff courses on work skills.</p>
+            <button type="button" class="sim-next" hidden>Next scenario</button>
+          </div>
+          <div class="sim-step" hidden>
+            <p class="sim-progress">Scenario 4 of 9</p>
+            <p>A guest walks into an office for a meeting. Someone needs to register them and let the host know they have arrived.</p>
+            <p>Which AI role should handle this?</p>
+            <div class="sim-options">
+              <button type="button" class="sim-option">AI Concierge</button>
+              <button type="button" class="sim-option" data-correct>AI Virtual Receptionist</button>
+              <button type="button" class="sim-option">AI Feedback Agent</button>
+              <button type="button" class="sim-option">AI Trainer</button>
+            </div>
+            <p class="sim-result" role="status" tabindex="-1"></p>
+            <p class="sim-why" hidden>The AI Virtual Receptionist receives and registers guests and notifies staff of their arrival.</p>
+            <button type="button" class="sim-next" hidden>Next scenario</button>
+          </div>
+          <div class="sim-step" hidden>
+            <p class="sim-progress">Scenario 5 of 9</p>
+            <p>A visitor in a large building asks where to find the bank and where to eat lunch.</p>
+            <p>Which AI role should handle this?</p>
+            <div class="sim-options">
+              <button type="button" class="sim-option" data-correct>AI Concierge</button>
+              <button type="button" class="sim-option">AI Knowledge Agent</button>
+              <button type="button" class="sim-option">AI Virtual Receptionist</button>
+              <button type="button" class="sim-option">AI Product Agent</button>
+            </div>
+            <p class="sim-result" role="status" tabindex="-1"></p>
+            <p class="sim-why" hidden>The AI Concierge recommends and guides visitors to offices, dining and shopping hotspots.</p>
+            <button type="button" class="sim-next" hidden>Next scenario</button>
+          </div>
+          <div class="sim-step" hidden>
+            <p class="sim-progress">Scenario 6 of 9</p>
+            <p>A user needs help finding an online service and has questions about how to use it.</p>
+            <p>Which AI role should handle this?</p>
+            <div class="sim-options">
+              <button type="button" class="sim-option">AI Service Robot</button>
+              <button type="button" class="sim-option">AI Knowledge Agent</button>
+              <button type="button" class="sim-option">AI Concierge</button>
+              <button type="button" class="sim-option" data-correct>AI e-Services Agent</button>
+            </div>
+            <p class="sim-result" role="status" tabindex="-1"></p>
+            <p class="sim-why" hidden>The AI e-Services Agent helps users navigate and access online services and answers related questions.</p>
+            <button type="button" class="sim-next" hidden>Next scenario</button>
+          </div>
+          <div class="sim-step" hidden>
+            <p class="sim-progress">Scenario 7 of 9</p>
+            <p>A service counter wants customers to say how satisfied they were, without touching a shared panel.</p>
+            <p>Which AI role should handle this?</p>
+            <div class="sim-options">
+              <button type="button" class="sim-option">AI Virtual Receptionist</button>
+              <button type="button" class="sim-option" data-correct>AI Feedback Agent</button>
+              <button type="button" class="sim-option">AI Trainer</button>
+              <button type="button" class="sim-option">AI Product Agent</button>
+            </div>
+            <p class="sim-result" role="status" tabindex="-1"></p>
+            <p class="sim-why" hidden>The AI Feedback Agent drives customer engagement and encourages feedback sharing.</p>
+            <button type="button" class="sim-next" hidden>Next scenario</button>
+          </div>
+          <div class="sim-step" hidden>
+            <p class="sim-progress">Scenario 8 of 9</p>
+            <p>A shopper in a perfume shop asks, &ldquo;What kind of scent suits me?&rdquo;</p>
+            <p>Which AI role should handle this?</p>
+            <div class="sim-options">
+              <button type="button" class="sim-option">AI Restaurant Assistant</button>
+              <button type="button" class="sim-option">AI Service Robot</button>
+              <button type="button" class="sim-option">AI e-Services Agent</button>
+              <button type="button" class="sim-option" data-correct>AI Product Agent</button>
+            </div>
+            <p class="sim-result" role="status" tabindex="-1"></p>
+            <p class="sim-why" hidden>The AI Product Agent assists customers with product questions and makes relevant recommendations.</p>
+            <button type="button" class="sim-next" hidden>Next scenario</button>
+          </div>
+          <div class="sim-step" hidden>
+            <p class="sim-progress">Scenario 9 of 9</p>
+            <p>A shopper in a big store wants to be led to the chocolates section.</p>
+            <p>Which AI role should handle this?</p>
+            <div class="sim-options">
+              <button type="button" class="sim-option" data-correct>AI Service Robot</button>
+              <button type="button" class="sim-option">AI Product Agent</button>
+              <button type="button" class="sim-option">AI Concierge</button>
+              <button type="button" class="sim-option">AI Feedback Agent</button>
+            </div>
+            <p class="sim-result" role="status" tabindex="-1"></p>
+            <p class="sim-why" hidden>The AI Service Robot is a roving robot that engages customers and leads them to product sections.</p>
+            <button type="button" class="sim-next" hidden>See my score</button>
+          </div>
+          </div>
+          <div class="sim-score" role="status" tabindex="-1" hidden>
+            <p class="sim-score-text"></p>
+            <button type="button" class="sim-retry">Try again</button>
           </div>
         </section>
       </div>
