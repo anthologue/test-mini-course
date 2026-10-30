@@ -56,11 +56,52 @@
       }
     });
 
+    // Tabs: Lesson and Quiz share the one page
+    var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
+    var panels = { lesson: document.getElementById('panel-lesson'), quiz: document.getElementById('panel-quiz') };
+    var lessonSections = sections.filter(function (s) { return panels.lesson.contains(s); });
+
+    function showTab(name) {
+      tabs.forEach(function (tab) {
+        var on = tab.getAttribute('data-tab') === name;
+        tab.setAttribute('aria-selected', on);
+        tab.tabIndex = on ? 0 : -1;
+        panels[tab.getAttribute('data-tab')].hidden = !on;
+      });
+      updateCurrent();
+    }
+
+    tabs.forEach(function (tab, i) {
+      tab.addEventListener('click', function () {
+        showTab(tab.getAttribute('data-tab'));
+        document.getElementById('main').scrollIntoView();
+      });
+      tab.addEventListener('keydown', function (e) {
+        var step = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+        if (!step) { return; }
+        var other = tabs[(i + step + tabs.length) % tabs.length];
+        showTab(other.getAttribute('data-tab'));
+        other.focus();
+        e.preventDefault();
+      });
+    });
+
+    // Buttons inside the lesson that open a tab (such as "Take the quiz")
+    document.querySelectorAll('button[data-tab]:not(.tab)').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        showTab(btn.getAttribute('data-tab'));
+        document.getElementById('main').scrollIntoView();
+      });
+    });
+
     // Jump to a section when a menu link or the title is chosen
     var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     function goTo(id) {
       var target = document.getElementById(id);
       if (!target) { return; }
+      // Open the tab the section lives in first
+      if (panels.quiz.contains(target)) { showTab('quiz'); }
+      else if (panels.lesson.contains(target)) { showTab('lesson'); }
       target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
       var heading = target.querySelector('h1, h2');
       heading.setAttribute('tabindex', '-1');
@@ -108,6 +149,51 @@
       });
     });
 
+    // Quiz: each answer is marked as soon as it is chosen; the score shows once all are answered
+    var quizForm = document.getElementById('quiz-form');
+    var questions = Array.prototype.slice.call(quizForm.querySelectorAll('.quiz-q'));
+    var score = document.querySelector('.quiz-score');
+    var answered = 0;
+    var correctCount = 0;
+
+    quizForm.addEventListener('change', function (e) {
+      var q = e.target.closest('.quiz-q');
+      if (!q || q.disabled) { return; }
+
+      var right = q.querySelector('input[value="' + q.dataset.correct + '"]');
+      var isRight = e.target === right;
+      var result = q.querySelector('.quiz-result');
+      result.className = 'quiz-result ' + (isRight ? 'correct' : 'wrong');
+      result.textContent = isRight
+        ? '✓ Correct!'
+        : '✗ Not quite. The answer is: ' + right.parentNode.textContent.trim();
+      q.querySelector('.quiz-why').hidden = false;
+      q.disabled = true;
+
+      answered += 1;
+      if (isRight) { correctCount += 1; }
+      if (answered === questions.length) {
+        score.querySelector('.quiz-score-text').textContent =
+          'You scored ' + correctCount + ' out of ' + questions.length + '.';
+        score.hidden = false;
+        score.focus();
+      }
+    });
+
+    document.querySelector('.quiz-retry').addEventListener('click', function () {
+      quizForm.reset();
+      questions.forEach(function (q) {
+        q.disabled = false;
+        q.querySelector('.quiz-result').textContent = '';
+        q.querySelector('.quiz-result').className = 'quiz-result';
+        q.querySelector('.quiz-why').hidden = true;
+      });
+      answered = 0;
+      correctCount = 0;
+      score.hidden = true;
+      document.getElementById('title-quiz').scrollIntoView();
+    });
+
     // Highlight the section being read
     function setCurrent(index) {
       links.forEach(function (a, i) {
@@ -117,14 +203,18 @@
     }
 
     function updateCurrent() {
+      if (!panels.quiz.hidden) {
+        setCurrent(links.length - 1);
+        return;
+      }
       var line = window.innerHeight * 0.3;
       var current = 0;
-      sections.forEach(function (s, i) {
+      lessonSections.forEach(function (s, i) {
         if (s.getBoundingClientRect().top <= line) { current = i; }
       });
       // At the very bottom the last section may be too short to reach the line.
       if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 2) {
-        current = sections.length - 1;
+        current = lessonSections.length - 1;
       }
       setCurrent(current);
     }
@@ -140,5 +230,10 @@
     }, { passive: true });
     window.addEventListener('resize', updateCurrent);
     updateCurrent();
+
+    // A link straight to the quiz (or to any section) should open on the right tab
+    if (location.hash.length > 1 && document.getElementById(location.hash.slice(1))) {
+      goTo(location.hash.slice(1));
+    }
   });
 })();

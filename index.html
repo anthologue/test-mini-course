@@ -33,374 +33,464 @@
         <li><a href="#section-9">Retail challenges</a></li>
         <li><a href="#section-10">Retail AI agents</a></li>
       </ol>
+      <p class="nav-title needs-js">Practice</p>
+      <ul class="needs-js">
+        <li><a href="#quiz">Quiz</a></li>
+      </ul>
     </nav>
 
     <main id="main">
 
-      <section id="section-1" aria-labelledby="title-1">
-        <h1 id="title-1">Frontline Roles for AI Co-Worker Agents</h1>
-        <img src="images/intro-brain.jpg" width="1400" height="933"
-             alt="A glowing digital brain built from circuit boards.">
-        <p>This course is about <strong>frontline service agents</strong>: AI co-workers that talk with customers and visitors, the way a receptionist, shop assistant or guide would. You do not need any background in AI. Terms are explained in plain words as they come up.</p>
-        <h2>What you will learn</h2>
-        <ul>
-          <li>What frontline AI agents are and what they can do</li>
-          <li>The roles they can play, from reception to retail</li>
-          <li>How human jobs can change, and how companies can support their staff</li>
-        </ul>
-        <p>Scroll down to read in order, or use the menu to jump to any section.</p>
+      <div class="tabs needs-js" role="tablist" aria-label="Course views">
+        <button class="tab" type="button" role="tab" id="tab-lesson" data-tab="lesson" aria-selected="true" aria-controls="panel-lesson">Lesson</button>
+        <button class="tab" type="button" role="tab" id="tab-quiz" data-tab="quiz" aria-selected="false" aria-controls="panel-quiz" tabindex="-1">Quiz</button>
+      </div>
 
-        <form class="check" data-correct="b">
-          <fieldset>
-            <legend>Quick check</legend>
-            <p>What are frontline AI agents?</p>
-            <label><input type="radio" name="check-1" value="a"> Software that only runs in the back office</label>
-            <label><input type="radio" name="check-1" value="b"> AI co-workers that talk with customers and visitors</label>
-            <label><input type="radio" name="check-1" value="c"> Robots that replace all staff</label>
-            <button type="submit">Check answer</button>
+      <div id="panel-lesson" role="tabpanel" aria-labelledby="tab-lesson">
+        <section id="section-1" aria-labelledby="title-1">
+          <h1 id="title-1">Frontline Roles for AI Co-Worker Agents</h1>
+          <img src="images/intro-brain.jpg" width="1400" height="933"
+               alt="A glowing digital brain built from circuit boards.">
+          <p>This course is about <strong>frontline service agents</strong>: AI co-workers that talk with customers and visitors, the way a receptionist, shop assistant or guide would. You do not need any background in AI. Terms are explained in plain words as they come up.</p>
+          <h2>What you will learn</h2>
+          <ul>
+            <li>What frontline AI agents are and what they can do</li>
+            <li>The roles they can play, from reception to retail</li>
+            <li>How human jobs can change, and how companies can support their staff</li>
+          </ul>
+          <p>Scroll down to read in order, or use the menu to jump to any section.</p>
+
+          <form class="check" data-correct="b">
+            <fieldset>
+              <legend>Quick check</legend>
+              <p>What are frontline AI agents?</p>
+              <label><input type="radio" name="check-1" value="a"> Software that only runs in the back office</label>
+              <label><input type="radio" name="check-1" value="b"> AI co-workers that talk with customers and visitors</label>
+              <label><input type="radio" name="check-1" value="c"> Robots that replace all staff</label>
+              <button type="submit">Check answer</button>
+            </fieldset>
+            <p class="check-result" role="status" tabindex="-1"></p>
+            <p class="check-why" hidden>They talk with customers and visitors the way a receptionist, shop assistant or guide would.</p>
+            <a class="check-next" href="#section-2" hidden>Next section</a>
+          </form>
+        </section>
+
+        <section id="section-2" aria-labelledby="title-2">
+          <h2 id="title-2">Will AI Take Over My Job?</h2>
+          <img src="images/job-worry.jpg" width="1600" height="897" loading="lazy"
+               alt="A worried man in a suit sitting with his hands pressed together in front of his face.">
+          <p>When AI arrives at work, staff have real worries. Is my job still relevant? Will my pay be reduced? Is there still a way to move up in my career? Should I start looking for work somewhere else?</p>
+          <p>Companies can answer each of these worries with a clear step:</p>
+          <ul>
+            <li><strong>Upskilling:</strong> the company trains its staff in AI skills.</li>
+            <li><strong>Job redesign:</strong> staff learn to manage and make use of AI, and are paid better for it.</li>
+            <li><strong>A transformed career path:</strong> a new track for workers who are ready to work with AI.</li>
+            <li><strong>Staff retention:</strong> keeping people through AI-driven pay, benefits and career opportunities.</li>
+          </ul>
+          <h3>In plain words</h3>
+          <dl>
+            <dt>Upskilling</dt>
+            <dd>Teaching current staff new skills so they can keep doing useful work as technology changes.</dd>
+            <dt>Staff retention</dt>
+            <dd>Keeping good employees from leaving.</dd>
+          </dl>
+
+          <form class="check" data-correct="c">
+            <fieldset>
+              <legend>Quick check</legend>
+              <p>Which step means the company trains its staff in AI skills?</p>
+              <label><input type="radio" name="check-2" value="a"> Staff retention</label>
+              <label><input type="radio" name="check-2" value="b"> A transformed career path</label>
+              <label><input type="radio" name="check-2" value="c"> Upskilling</label>
+              <button type="submit">Check answer</button>
+            </fieldset>
+            <p class="check-result" role="status" tabindex="-1"></p>
+            <p class="check-why" hidden>Upskilling is teaching current staff new skills so they can keep doing useful work as technology changes.</p>
+            <a class="check-next" href="#section-3" hidden>Next section</a>
+          </form>
+        </section>
+
+        <section id="section-3" aria-labelledby="title-3">
+          <h2 id="title-3">Frontline Multi-modal Conversational AI Agents</h2>
+          <img src="images/virtual-human.jpg" width="418" height="447" loading="lazy"
+               alt="A smiling virtual human shown on a screen.">
+          <p>The agents in this course are meant to be <em>fast-response, lean-cost and multi-role</em>: they answer quickly, cost little to run, and can fill several different jobs. Here is what makes that possible:</p>
+          <ul>
+            <li><strong>Two-way communication.</strong> They can talk, type and respond to touch, with a choice of voice.</li>
+            <li><strong>A human look.</strong> A human avatar engine quickly creates varied, lifelike expressions on screen.</li>
+            <li><strong>Conversation with reasoning.</strong> A suite of language models (the Aitom LLM Suite) understands what people say and replies, for example by recommending a product or giving a price.</li>
+            <li><strong>Role skills.</strong> They come pre-trained in the skills of many human roles.</li>
+            <li><strong>Insights.</strong> They can study their conversations with visitors and customers to show a business what people want.</li>
+            <li><strong>Train once, use everywhere.</strong> One &ldquo;brain&rdquo; is trained once and then controls agents at every site and location.</li>
+          </ul>
+          <h3>In plain words</h3>
+          <dl>
+            <dt>Multi-modal</dt>
+            <dd>Able to communicate in more than one way. Here: voice, text and touch.</dd>
+            <dt>Conversational AI</dt>
+            <dd>AI you can simply talk to, instead of clicking through menus.</dd>
+            <dt>LLM (large language model)</dt>
+            <dd>The kind of AI that understands and writes human language.</dd>
+            <dt>Avatar</dt>
+            <dd>An on-screen character that looks like a person.</dd>
+            <dt>Deployment</dt>
+            <dd>Putting an agent into use at a real place, such as a shop or an office.</dd>
+          </dl>
+
+          <form class="check" data-correct="a">
+            <fieldset>
+              <legend>Quick check</legend>
+              <p>What does &ldquo;train once, use everywhere&rdquo; mean?</p>
+              <label><input type="radio" name="check-3" value="a"> One trained &ldquo;brain&rdquo; controls agents at every site</label>
+              <label><input type="radio" name="check-3" value="b"> Each site must train its own agent</label>
+              <label><input type="radio" name="check-3" value="c"> An agent can only be used once</label>
+              <button type="submit">Check answer</button>
+            </fieldset>
+            <p class="check-result" role="status" tabindex="-1"></p>
+            <p class="check-why" hidden>A single &ldquo;brain&rdquo;, once trained, controls deployments across all sites and locations.</p>
+            <a class="check-next" href="#section-4" hidden>Next section</a>
+          </form>
+        </section>
+
+        <section id="section-4" aria-labelledby="title-4">
+          <h2 id="title-4">Roles for Frontline AI Co-workers</h2>
+          <p>This is a platform of AI agents trained for many kinds of engagement, from the back office to the front desk to the front line. The picture below shows nine roles. The list under it has the same information as text.</p>
+          <figure>
+            <img src="images/ai-roles-diagram.jpg" width="1500" height="1037" loading="lazy"
+                 alt="Illustration of nine frontline AI co-worker roles arranged in a loop, from restaurant assistant to concierge. The same roles are described in the list below.">
+            <figcaption>The nine roles.</figcaption>
+          </figure>
+          <ul>
+            <li><strong>AI Restaurant Assistant</strong> recommends dishes to suit a customer&rsquo;s taste. It might say, &ldquo;Welcome! Let me recommend our most popular dishes to you.&rdquo;</li>
+            <li><strong>AI Knowledge Agent</strong> gives staff quick answers about the organisation, from company policies to how things are done. &ldquo;Ask me about our corporate policies.&rdquo;</li>
+            <li><strong>AI Trainer</strong> acts as a virtual trainer in staff courses on work skills.</li>
+            <li><strong>AI Virtual Receptionist</strong> receives and registers guests and tells staff when a guest arrives. &ldquo;Welcome to our office! How may I help you?&rdquo;</li>
+            <li><strong>AI Concierge</strong> guides visitors to offices, restaurants and shops. &ldquo;Please take the lift at Lobby B to go to the bank at Level 3.&rdquo;</li>
+            <li><strong>AI e-Services Agent</strong> helps people find and use online services, and answers questions about them.</li>
+            <li><strong>AI Feedback Agent</strong> invites customers to share feedback. &ldquo;Are you satisfied with our service?&rdquo;</li>
+            <li><strong>AI Product Agent</strong> helps customers with product questions and suggests suitable items. &ldquo;What kind of scent are you looking for?&rdquo;</li>
+            <li><strong>AI Service Robot</strong> is a roving robot that talks to customers and leads them to product sections. &ldquo;Let me take you to the Chocolates section.&rdquo;</li>
+          </ul>
+          <p>Together, these agents can fill gaps where there are not enough workers, and add to what the human team can do, so that customers get friendly, human-like service 24 hours a day.</p>
+          <h3>In plain words</h3>
+          <dl>
+            <dt>Concierge</dt>
+            <dd>Someone whose job is to help visitors find what they need and where to go.</dd>
+            <dt>Augment the workforce</dt>
+            <dd>Add to what people can do, rather than replace them.</dd>
+            <dt>Back office / front desk / front line</dt>
+            <dd>Work behind the scenes, work at a reception desk, and work face to face with customers.</dd>
+          </dl>
+
+          <form class="check" data-correct="b">
+            <fieldset>
+              <legend>Quick check</legend>
+              <p>Which role gives staff quick answers about company policies?</p>
+              <label><input type="radio" name="check-4" value="a"> AI Service Robot</label>
+              <label><input type="radio" name="check-4" value="b"> AI Knowledge Agent</label>
+              <label><input type="radio" name="check-4" value="c"> AI Feedback Agent</label>
+              <button type="submit">Check answer</button>
+            </fieldset>
+            <p class="check-result" role="status" tabindex="-1"></p>
+            <p class="check-why" hidden>The AI Knowledge Agent answers staff questions on enterprise knowledge, from corporate policies to operational procedures.</p>
+            <a class="check-next" href="#section-5" hidden>Next section</a>
+          </form>
+        </section>
+
+        <section id="section-5" aria-labelledby="title-5">
+          <h2 id="title-5">Human Job Re-design &amp; Re-skilling</h2>
+          <img src="images/staff-redesign.jpg" width="1028" height="925" loading="lazy"
+               alt="A shop assistant smiling and helping a customer choose clothes in a clothing store.">
+          <p>How can a person&rsquo;s role change in a workplace where people and AI work side by side? The course asks three questions:</p>
+          <ul>
+            <li>Can a role change from doing the work yourself to <strong>supervising AI co-workers</strong>?</li>
+            <li>Can staff be trained to <strong>check and set up AI agents</strong> so they perform as well as possible?</li>
+            <li>Can staff <strong>earn more</strong> when the AI agents they look after do well together?</li>
+          </ul>
+          <p>If the answer to each is yes, AI becomes something staff work with and benefit from, which also speaks to the worries in the second section.</p>
+          <h3>In plain words</h3>
+          <dl>
+            <dt>Hybrid workforce</dt>
+            <dd>A team made up of both people and AI agents.</dd>
+            <dt>Individual contributor</dt>
+            <dd>Someone who does the work themselves rather than managing others.</dd>
+            <dt>KPI (key performance indicator)</dt>
+            <dd>A number used to measure how well work is going, such as customers helped per day.</dd>
+            <dt>Re-skilling</dt>
+            <dd>Learning different skills for a changed role.</dd>
+          </dl>
+
+          <form class="check" data-correct="c">
+            <fieldset>
+              <legend>Quick check</legend>
+              <p>In a redesigned role, what might a staff member do?</p>
+              <label><input type="radio" name="check-5" value="a"> Stop working with customers entirely</label>
+              <label><input type="radio" name="check-5" value="b"> Do the AI&rsquo;s work by hand</label>
+              <label><input type="radio" name="check-5" value="c"> Supervise AI co-workers and help set them up</label>
+              <button type="submit">Check answer</button>
+            </fieldset>
+            <p class="check-result" role="status" tabindex="-1"></p>
+            <p class="check-why" hidden>A role can change from doing the work yourself to supervising AI co-workers and checking how well they perform.</p>
+            <a class="check-next" href="#section-6" hidden>Next section</a>
+          </form>
+        </section>
+
+        <section id="section-6" aria-labelledby="title-6">
+          <h2 id="title-6">AI Agents for Customer Service</h2>
+          <img src="images/customer-service-kiosk.jpg" width="729" height="1024" loading="lazy"
+               alt="A woman tapping a smiley-face rating on a customer feedback kiosk, with a virtual assistant shown on its screen.">
+          <h3>Less workload for staff</h3>
+          <p>Customer service officers currently ask users for feedback more than 100 times a day. An AI agent can take over that task, which frees the officers to give more focused service.</p>
+          <h3>More hygienic feedback</h3>
+          <p>Instead of touching a shared panel and risking the spread of germs, users can give their feedback by speaking to an AI agent, with no contact at all.</p>
+          <h3>In plain words</h3>
+          <dl>
+            <dt>Customer service officer (CSO)</dt>
+            <dd>A staff member whose job is to help customers.</dd>
+            <dt>Contactless</dt>
+            <dd>Done without touching anything.</dd>
+          </dl>
+
+          <form class="check" data-correct="a">
+            <fieldset>
+              <legend>Quick check</legend>
+              <p>Why can giving feedback by voice be more hygienic?</p>
+              <label><input type="radio" name="check-6" value="a"> Nobody has to touch a shared panel</label>
+              <label><input type="radio" name="check-6" value="b"> The panel is cleaned more often</label>
+              <label><input type="radio" name="check-6" value="c"> Feedback is no longer needed</label>
+              <button type="submit">Check answer</button>
+            </fieldset>
+            <p class="check-result" role="status" tabindex="-1"></p>
+            <p class="check-why" hidden>Users speak to an AI agent instead of touching a panel, so there is no contact at all.</p>
+            <a class="check-next" href="#section-7" hidden>Next section</a>
+          </form>
+        </section>
+
+        <section id="section-7" aria-labelledby="title-7">
+          <h2 id="title-7">AI Agents for Office Concierge / Receptionist</h2>
+          <img src="images/office-receptionist.jpg" width="956" height="716" loading="lazy"
+               alt="Two visitors talking to a digital receptionist on a large screen in a modern office. The screen reads: Welcome! May I know the purpose of your visit?">
+          <p>An AI agent can welcome people at the door, taking over the hospitality tasks of a receptionist and working with staff when visitors arrive. It can:</p>
+          <ul>
+            <li>Greet guests as a digital human, and find out the guest&rsquo;s name, company and who they are meeting.</li>
+            <li>Direct the guest to the right meeting room.</li>
+            <li>Tell staff by SMS, WhatsApp or Telegram that their guest has arrived.</li>
+            <li>Help run the office, for example by adjusting the air-conditioning or preparing a meeting room.</li>
+          </ul>
+          <h3>In plain words</h3>
+          <dl>
+            <dt>Digital human</dt>
+            <dd>A lifelike on-screen person that can talk with you.</dd>
+            <dt>Hospitality</dt>
+            <dd>Making guests and visitors feel welcome and looked after.</dd>
+          </dl>
+
+          <form class="check" data-correct="b">
+            <fieldset>
+              <legend>Quick check</legend>
+              <p>Besides greeting guests, what can an AI receptionist do?</p>
+              <label><input type="radio" name="check-7" value="a"> Hire new staff</label>
+              <label><input type="radio" name="check-7" value="b"> Tell staff by message that their guest has arrived</label>
+              <label><input type="radio" name="check-7" value="c"> Sign contracts</label>
+              <button type="submit">Check answer</button>
+            </fieldset>
+            <p class="check-result" role="status" tabindex="-1"></p>
+            <p class="check-why" hidden>It can notify staff by SMS, WhatsApp or Telegram when a guest arrives.</p>
+            <a class="check-next" href="#section-8" hidden>Next section</a>
+          </form>
+        </section>
+
+        <section id="section-8" aria-labelledby="title-8">
+          <h2 id="title-8">AI Agents for Hospitality &ndash; Tourism &amp; Attractions</h2>
+          <img src="images/tourism-visitor-concierge.jpg" width="930" height="1024" loading="lazy"
+               alt="A group of tourists asking a virtual guide on a screen for ideas. The screen sits on a small wheeled robot in a historic town square.">
+          <p>At tourist spots, an AI <strong>visitor concierge</strong> can:</p>
+          <ul>
+            <li>Serve visitors and tourists in different languages.</li>
+            <li>Introduce the features and highlights of an attraction or event venue.</li>
+            <li>Suggest extra purchases, such as drinks or souvenirs (this is called upselling and cross-selling).</li>
+          </ul>
+          <h3>In plain words</h3>
+          <dl>
+            <dt>MICE venue</dt>
+            <dd>A place for meetings, incentives, conferences and exhibitions.</dd>
+            <dt>Upsell / cross-sell</dt>
+            <dd>Offering a better version of what someone is buying, or something extra that goes with it.</dd>
+          </dl>
+
+          <form class="check" data-correct="c">
+            <fieldset>
+              <legend>Quick check</legend>
+              <p>What can an AI visitor concierge do?</p>
+              <label><input type="radio" name="check-8" value="a"> Only answer in one language</label>
+              <label><input type="radio" name="check-8" value="b"> Only sell tickets</label>
+              <label><input type="radio" name="check-8" value="c"> Serve visitors in different languages</label>
+              <button type="submit">Check answer</button>
+            </fieldset>
+            <p class="check-result" role="status" tabindex="-1"></p>
+            <p class="check-why" hidden>It serves visitors and tourists in different languages and introduces the highlights of the attraction.</p>
+            <a class="check-next" href="#section-9" hidden>Next section</a>
+          </form>
+        </section>
+
+        <section id="section-9" aria-labelledby="title-9">
+          <h2 id="title-9">Challenges in Retail &amp; Service Industry</h2>
+          <img src="images/retail-challenges.jpg" width="1024" height="1024" loading="lazy"
+               alt="Three photos side by side: a couple shopping in a supermarket aisle, a person browsing clothes on a laptop, and a woman using a perfume advisor screen with an AI avatar.">
+          <p>People now shop in three ways: in a physical shop, online, and with a personalised AI advisor. This brings four challenges for shops and service businesses:</p>
+          <ul>
+            <li><strong>Shifting demographics.</strong> Who prefers a human, online, digital or AI touch?</li>
+            <li><strong>In-store sales coverage.</strong> Do customers wait too long to be served, or to check a price or whether something is in stock?</li>
+            <li><strong>Consistent service around the clock.</strong> Are there enough staff for long opening hours, and are customers happy?</li>
+            <li><strong>Knowing what customers want.</strong> Is there enough data to understand them and make decisions?</li>
+          </ul>
+          <h3>In plain words</h3>
+          <dl>
+            <dt>Demographics</dt>
+            <dd>Facts about a group of people, such as their age.</dd>
+            <dt>Retail</dt>
+            <dd>Selling goods directly to customers, in shops or online.</dd>
+          </dl>
+
+          <form class="check" data-correct="a">
+            <fieldset>
+              <legend>Quick check</legend>
+              <p>Which is a challenge for shops and service businesses?</p>
+              <label><input type="radio" name="check-9" value="a"> Customers waiting too long to be served or to check a price</label>
+              <label><input type="radio" name="check-9" value="b"> Prices are always too low</label>
+              <label><input type="radio" name="check-9" value="c"> Nobody shops online</label>
+              <button type="submit">Check answer</button>
+            </fieldset>
+            <p class="check-result" role="status" tabindex="-1"></p>
+            <p class="check-why" hidden>In-store sales coverage is one of the four challenges: customers may wait too long to be served.</p>
+            <a class="check-next" href="#section-10" hidden>Next section</a>
+          </form>
+        </section>
+
+        <section id="section-10" aria-labelledby="title-10">
+          <h2 id="title-10">Retail AI Agents</h2>
+          <img src="images/retail-ai-agents.jpg" width="1200" height="937" loading="lazy"
+               alt="Illustrated retail store with an AI expert avatar on a screen for each area: apparel, handbags, chocolates and perfumes. An online AI expert appears in a chat window, and a label notes that AI agents assist staff in running the store.">
+          <p>The idea here is <strong>engage everywhere</strong>: customer engagement with no friction. It has three steps:</p>
+          <ol>
+            <li>Put AI experts everywhere, for example one for apparel, handbags, chocolates and perfumes, plus one online.</li>
+            <li>Help staff become trusted advisers, with AI agents assisting them in running the store.</li>
+            <li>Let customers do &lsquo;anything&rsquo; anywhere.</li>
+          </ol>
+          <p>That last step means customers can:</p>
+          <ul>
+            <li>Ask questions</li>
+            <li>Get recommendations</li>
+            <li>Check price</li>
+            <li>Check stock</li>
+            <li>Get personalised promotions</li>
+            <li>Find a product on a map</li>
+            <li>Go straight to checkout</li>
+          </ul>
+          <h3>In plain words</h3>
+          <dl>
+            <dt>Frictionless</dt>
+            <dd>Smooth and easy, with nothing slowing the customer down.</dd>
+            <dt>Trusted adviser</dt>
+            <dd>Someone customers rely on for honest, helpful advice.</dd>
+            <dt>Personalised promotion</dt>
+            <dd>An offer chosen to suit one particular customer.</dd>
+          </dl>
+
+          <form class="check" data-correct="b">
+            <fieldset>
+              <legend>Quick check</legend>
+              <p>What does &ldquo;engage everywhere&rdquo; mean?</p>
+              <label><input type="radio" name="check-10" value="a"> AI works only at the checkout</label>
+              <label><input type="radio" name="check-10" value="b"> AI experts are placed everywhere, so customers can ask, check price and stock, and more, anywhere</label>
+              <label><input type="radio" name="check-10" value="c"> Customers must find a person first</label>
+              <button type="submit">Check answer</button>
+            </fieldset>
+            <p class="check-result" role="status" tabindex="-1"></p>
+            <p class="check-why" hidden>AI experts are put everywhere, and customers can do &lsquo;anything&rsquo; anywhere, from asking questions to checking out.</p>
+            <a class="check-next" href="#section-1" hidden>Back to the top</a>
+          </form>
+        </section>
+
+        <p class="needs-js">Finished reading? <button type="button" data-tab="quiz">Take the quiz</button></p>
+      </div>
+
+      <div id="panel-quiz" role="tabpanel" aria-labelledby="tab-quiz" hidden>
+        <section id="quiz" aria-labelledby="title-quiz">
+          <h2 id="title-quiz">Quiz</h2>
+          <p>Eight questions on the whole course. You will see straight away whether each answer was right, and your score once all eight are answered.</p>
+          <form id="quiz-form">
+          <fieldset class="quiz-q" data-correct="b">
+            <legend>1. Which company step means staff learn to manage and make use of AI, and are paid better for it?</legend>
+            <label><input type="radio" name="quiz-1" value="a"> Staff retention</label>
+            <label><input type="radio" name="quiz-1" value="b"> Job redesign</label>
+            <label><input type="radio" name="quiz-1" value="c"> Upskilling</label>
+            <p class="quiz-result" role="status"></p>
+            <p class="quiz-why" hidden>Job redesign turns staff into people who manage and harness AI for better pay. Upskilling is the training that gets them there.</p>
           </fieldset>
-          <p class="check-result" role="status" tabindex="-1"></p>
-          <p class="check-why" hidden>They talk with customers and visitors the way a receptionist, shop assistant or guide would.</p>
-          <a class="check-next" href="#section-2" hidden>Next section</a>
-        </form>
-      </section>
-
-      <section id="section-2" aria-labelledby="title-2">
-        <h2 id="title-2">Will AI Take Over My Job?</h2>
-        <img src="images/job-worry.jpg" width="1600" height="897" loading="lazy"
-             alt="A worried man in a suit sitting with his hands pressed together in front of his face.">
-        <p>When AI arrives at work, staff have real worries. Is my job still relevant? Will my pay be reduced? Is there still a way to move up in my career? Should I start looking for work somewhere else?</p>
-        <p>Companies can answer each of these worries with a clear step:</p>
-        <ul>
-          <li><strong>Upskilling:</strong> the company trains its staff in AI skills.</li>
-          <li><strong>Job redesign:</strong> staff learn to manage and make use of AI, and are paid better for it.</li>
-          <li><strong>A transformed career path:</strong> a new track for workers who are ready to work with AI.</li>
-          <li><strong>Staff retention:</strong> keeping people through AI-driven pay, benefits and career opportunities.</li>
-        </ul>
-        <h3>In plain words</h3>
-        <dl>
-          <dt>Upskilling</dt>
-          <dd>Teaching current staff new skills so they can keep doing useful work as technology changes.</dd>
-          <dt>Staff retention</dt>
-          <dd>Keeping good employees from leaving.</dd>
-        </dl>
-
-        <form class="check" data-correct="c">
-          <fieldset>
-            <legend>Quick check</legend>
-            <p>Which step means the company trains its staff in AI skills?</p>
-            <label><input type="radio" name="check-2" value="a"> Staff retention</label>
-            <label><input type="radio" name="check-2" value="b"> A transformed career path</label>
-            <label><input type="radio" name="check-2" value="c"> Upskilling</label>
-            <button type="submit">Check answer</button>
+          <fieldset class="quiz-q" data-correct="a">
+            <legend>2. What does &ldquo;multi-modal&rdquo; mean for an AI agent?</legend>
+            <label><input type="radio" name="quiz-2" value="a"> It can communicate in more than one way, such as voice, text and touch</label>
+            <label><input type="radio" name="quiz-2" value="b"> It can work in more than one shop at once</label>
+            <label><input type="radio" name="quiz-2" value="c"> It can look like more than one person</label>
+            <p class="quiz-result" role="status"></p>
+            <p class="quiz-why" hidden>Multi-modal means able to communicate in more than one way.</p>
           </fieldset>
-          <p class="check-result" role="status" tabindex="-1"></p>
-          <p class="check-why" hidden>Upskilling is teaching current staff new skills so they can keep doing useful work as technology changes.</p>
-          <a class="check-next" href="#section-3" hidden>Next section</a>
-        </form>
-      </section>
-
-      <section id="section-3" aria-labelledby="title-3">
-        <h2 id="title-3">Frontline Multi-modal Conversational AI Agents</h2>
-        <img src="images/virtual-human.jpg" width="418" height="447" loading="lazy"
-             alt="A smiling virtual human shown on a screen.">
-        <p>The agents in this course are meant to be <em>fast-response, lean-cost and multi-role</em>: they answer quickly, cost little to run, and can fill several different jobs. Here is what makes that possible:</p>
-        <ul>
-          <li><strong>Two-way communication.</strong> They can talk, type and respond to touch, with a choice of voice.</li>
-          <li><strong>A human look.</strong> A human avatar engine quickly creates varied, lifelike expressions on screen.</li>
-          <li><strong>Conversation with reasoning.</strong> A suite of language models (the Aitom LLM Suite) understands what people say and replies, for example by recommending a product or giving a price.</li>
-          <li><strong>Role skills.</strong> They come pre-trained in the skills of many human roles.</li>
-          <li><strong>Insights.</strong> They can study their conversations with visitors and customers to show a business what people want.</li>
-          <li><strong>Train once, use everywhere.</strong> One &ldquo;brain&rdquo; is trained once and then controls agents at every site and location.</li>
-        </ul>
-        <h3>In plain words</h3>
-        <dl>
-          <dt>Multi-modal</dt>
-          <dd>Able to communicate in more than one way. Here: voice, text and touch.</dd>
-          <dt>Conversational AI</dt>
-          <dd>AI you can simply talk to, instead of clicking through menus.</dd>
-          <dt>LLM (large language model)</dt>
-          <dd>The kind of AI that understands and writes human language.</dd>
-          <dt>Avatar</dt>
-          <dd>An on-screen character that looks like a person.</dd>
-          <dt>Deployment</dt>
-          <dd>Putting an agent into use at a real place, such as a shop or an office.</dd>
-        </dl>
-
-        <form class="check" data-correct="a">
-          <fieldset>
-            <legend>Quick check</legend>
-            <p>What does &ldquo;train once, use everywhere&rdquo; mean?</p>
-            <label><input type="radio" name="check-3" value="a"> One trained &ldquo;brain&rdquo; controls agents at every site</label>
-            <label><input type="radio" name="check-3" value="b"> Each site must train its own agent</label>
-            <label><input type="radio" name="check-3" value="c"> An agent can only be used once</label>
-            <button type="submit">Check answer</button>
+          <fieldset class="quiz-q" data-correct="c">
+            <legend>3. Which AI role recommends dishes to suit a customer&rsquo;s taste?</legend>
+            <label><input type="radio" name="quiz-3" value="a"> AI Trainer</label>
+            <label><input type="radio" name="quiz-3" value="b"> AI e-Services Agent</label>
+            <label><input type="radio" name="quiz-3" value="c"> AI Restaurant Assistant</label>
+            <p class="quiz-result" role="status"></p>
+            <p class="quiz-why" hidden>The AI Restaurant Assistant recommends dishes tailored to a customer&rsquo;s taste.</p>
           </fieldset>
-          <p class="check-result" role="status" tabindex="-1"></p>
-          <p class="check-why" hidden>A single &ldquo;brain&rdquo;, once trained, controls deployments across all sites and locations.</p>
-          <a class="check-next" href="#section-4" hidden>Next section</a>
-        </form>
-      </section>
-
-      <section id="section-4" aria-labelledby="title-4">
-        <h2 id="title-4">Roles for Frontline AI Co-workers</h2>
-        <p>This is a platform of AI agents trained for many kinds of engagement, from the back office to the front desk to the front line. The picture below shows nine roles. The list under it has the same information as text.</p>
-        <figure>
-          <img src="images/ai-roles-diagram.jpg" width="1500" height="1037" loading="lazy"
-               alt="Illustration of nine frontline AI co-worker roles arranged in a loop, from restaurant assistant to concierge. The same roles are described in the list below.">
-          <figcaption>The nine roles.</figcaption>
-        </figure>
-        <ul>
-          <li><strong>AI Restaurant Assistant</strong> recommends dishes to suit a customer&rsquo;s taste. It might say, &ldquo;Welcome! Let me recommend our most popular dishes to you.&rdquo;</li>
-          <li><strong>AI Knowledge Agent</strong> gives staff quick answers about the organisation, from company policies to how things are done. &ldquo;Ask me about our corporate policies.&rdquo;</li>
-          <li><strong>AI Trainer</strong> acts as a virtual trainer in staff courses on work skills.</li>
-          <li><strong>AI Virtual Receptionist</strong> receives and registers guests and tells staff when a guest arrives. &ldquo;Welcome to our office! How may I help you?&rdquo;</li>
-          <li><strong>AI Concierge</strong> guides visitors to offices, restaurants and shops. &ldquo;Please take the lift at Lobby B to go to the bank at Level 3.&rdquo;</li>
-          <li><strong>AI e-Services Agent</strong> helps people find and use online services, and answers questions about them.</li>
-          <li><strong>AI Feedback Agent</strong> invites customers to share feedback. &ldquo;Are you satisfied with our service?&rdquo;</li>
-          <li><strong>AI Product Agent</strong> helps customers with product questions and suggests suitable items. &ldquo;What kind of scent are you looking for?&rdquo;</li>
-          <li><strong>AI Service Robot</strong> is a roving robot that talks to customers and leads them to product sections. &ldquo;Let me take you to the Chocolates section.&rdquo;</li>
-        </ul>
-        <p>Together, these agents can fill gaps where there are not enough workers, and add to what the human team can do, so that customers get friendly, human-like service 24 hours a day.</p>
-        <h3>In plain words</h3>
-        <dl>
-          <dt>Concierge</dt>
-          <dd>Someone whose job is to help visitors find what they need and where to go.</dd>
-          <dt>Augment the workforce</dt>
-          <dd>Add to what people can do, rather than replace them.</dd>
-          <dt>Back office / front desk / front line</dt>
-          <dd>Work behind the scenes, work at a reception desk, and work face to face with customers.</dd>
-        </dl>
-
-        <form class="check" data-correct="b">
-          <fieldset>
-            <legend>Quick check</legend>
-            <p>Which role gives staff quick answers about company policies?</p>
-            <label><input type="radio" name="check-4" value="a"> AI Service Robot</label>
-            <label><input type="radio" name="check-4" value="b"> AI Knowledge Agent</label>
-            <label><input type="radio" name="check-4" value="c"> AI Feedback Agent</label>
-            <button type="submit">Check answer</button>
+          <fieldset class="quiz-q" data-correct="b">
+            <legend>4. Which is one idea for redesigning a human role in a hybrid workforce?</legend>
+            <label><input type="radio" name="quiz-4" value="a"> Staff do the AI&rsquo;s work by hand</label>
+            <label><input type="radio" name="quiz-4" value="b"> Staff earn more when the AI agents they look after do well together</label>
+            <label><input type="radio" name="quiz-4" value="c"> Staff stop learning new skills</label>
+            <p class="quiz-result" role="status"></p>
+            <p class="quiz-why" hidden>Staff could earn more from the collective KPIs of the AI agents&rsquo; productivity.</p>
           </fieldset>
-          <p class="check-result" role="status" tabindex="-1"></p>
-          <p class="check-why" hidden>The AI Knowledge Agent answers staff questions on enterprise knowledge, from corporate policies to operational procedures.</p>
-          <a class="check-next" href="#section-5" hidden>Next section</a>
-        </form>
-      </section>
-
-      <section id="section-5" aria-labelledby="title-5">
-        <h2 id="title-5">Human Job Re-design &amp; Re-skilling</h2>
-        <img src="images/staff-redesign.jpg" width="1028" height="925" loading="lazy"
-             alt="A shop assistant smiling and helping a customer choose clothes in a clothing store.">
-        <p>How can a person&rsquo;s role change in a workplace where people and AI work side by side? The course asks three questions:</p>
-        <ul>
-          <li>Can a role change from doing the work yourself to <strong>supervising AI co-workers</strong>?</li>
-          <li>Can staff be trained to <strong>check and set up AI agents</strong> so they perform as well as possible?</li>
-          <li>Can staff <strong>earn more</strong> when the AI agents they look after do well together?</li>
-        </ul>
-        <p>If the answer to each is yes, AI becomes something staff work with and benefit from, which also speaks to the worries in the second section.</p>
-        <h3>In plain words</h3>
-        <dl>
-          <dt>Hybrid workforce</dt>
-          <dd>A team made up of both people and AI agents.</dd>
-          <dt>Individual contributor</dt>
-          <dd>Someone who does the work themselves rather than managing others.</dd>
-          <dt>KPI (key performance indicator)</dt>
-          <dd>A number used to measure how well work is going, such as customers helped per day.</dd>
-          <dt>Re-skilling</dt>
-          <dd>Learning different skills for a changed role.</dd>
-        </dl>
-
-        <form class="check" data-correct="c">
-          <fieldset>
-            <legend>Quick check</legend>
-            <p>In a redesigned role, what might a staff member do?</p>
-            <label><input type="radio" name="check-5" value="a"> Stop working with customers entirely</label>
-            <label><input type="radio" name="check-5" value="b"> Do the AI&rsquo;s work by hand</label>
-            <label><input type="radio" name="check-5" value="c"> Supervise AI co-workers and help set them up</label>
-            <button type="submit">Check answer</button>
+          <fieldset class="quiz-q" data-correct="a">
+            <legend>5. Customer service officers currently ask users for feedback how often?</legend>
+            <label><input type="radio" name="quiz-5" value="a"> More than 100 times a day</label>
+            <label><input type="radio" name="quiz-5" value="b"> About 10 times a day</label>
+            <label><input type="radio" name="quiz-5" value="c"> Once a week</label>
+            <p class="quiz-result" role="status"></p>
+            <p class="quiz-why" hidden>That workload can be offloaded to AI agents, freeing officers for more focused service.</p>
           </fieldset>
-          <p class="check-result" role="status" tabindex="-1"></p>
-          <p class="check-why" hidden>A role can change from doing the work yourself to supervising AI co-workers and checking how well they perform.</p>
-          <a class="check-next" href="#section-6" hidden>Next section</a>
-        </form>
-      </section>
-
-      <section id="section-6" aria-labelledby="title-6">
-        <h2 id="title-6">AI Agents for Customer Service</h2>
-        <img src="images/customer-service-kiosk.jpg" width="729" height="1024" loading="lazy"
-             alt="A woman tapping a smiley-face rating on a customer feedback kiosk, with a virtual assistant shown on its screen.">
-        <h3>Less workload for staff</h3>
-        <p>Customer service officers currently ask users for feedback more than 100 times a day. An AI agent can take over that task, which frees the officers to give more focused service.</p>
-        <h3>More hygienic feedback</h3>
-        <p>Instead of touching a shared panel and risking the spread of germs, users can give their feedback by speaking to an AI agent, with no contact at all.</p>
-        <h3>In plain words</h3>
-        <dl>
-          <dt>Customer service officer (CSO)</dt>
-          <dd>A staff member whose job is to help customers.</dd>
-          <dt>Contactless</dt>
-          <dd>Done without touching anything.</dd>
-        </dl>
-
-        <form class="check" data-correct="a">
-          <fieldset>
-            <legend>Quick check</legend>
-            <p>Why can giving feedback by voice be more hygienic?</p>
-            <label><input type="radio" name="check-6" value="a"> Nobody has to touch a shared panel</label>
-            <label><input type="radio" name="check-6" value="b"> The panel is cleaned more often</label>
-            <label><input type="radio" name="check-6" value="c"> Feedback is no longer needed</label>
-            <button type="submit">Check answer</button>
+          <fieldset class="quiz-q" data-correct="c">
+            <legend>6. How can an AI receptionist tell staff that their guest has arrived?</legend>
+            <label><input type="radio" name="quiz-6" value="a"> Only by email</label>
+            <label><input type="radio" name="quiz-6" value="b"> By fax</label>
+            <label><input type="radio" name="quiz-6" value="c"> By SMS, WhatsApp or Telegram</label>
+            <p class="quiz-result" role="status"></p>
+            <p class="quiz-why" hidden>It can notify staff by SMS, WhatsApp or Telegram when a guest arrives.</p>
           </fieldset>
-          <p class="check-result" role="status" tabindex="-1"></p>
-          <p class="check-why" hidden>Users speak to an AI agent instead of touching a panel, so there is no contact at all.</p>
-          <a class="check-next" href="#section-7" hidden>Next section</a>
-        </form>
-      </section>
-
-      <section id="section-7" aria-labelledby="title-7">
-        <h2 id="title-7">AI Agents for Office Concierge / Receptionist</h2>
-        <img src="images/office-receptionist.jpg" width="956" height="716" loading="lazy"
-             alt="Two visitors talking to a digital receptionist on a large screen in a modern office. The screen reads: Welcome! May I know the purpose of your visit?">
-        <p>An AI agent can welcome people at the door, taking over the hospitality tasks of a receptionist and working with staff when visitors arrive. It can:</p>
-        <ul>
-          <li>Greet guests as a digital human, and find out the guest&rsquo;s name, company and who they are meeting.</li>
-          <li>Direct the guest to the right meeting room.</li>
-          <li>Tell staff by SMS, WhatsApp or Telegram that their guest has arrived.</li>
-          <li>Help run the office, for example by adjusting the air-conditioning or preparing a meeting room.</li>
-        </ul>
-        <h3>In plain words</h3>
-        <dl>
-          <dt>Digital human</dt>
-          <dd>A lifelike on-screen person that can talk with you.</dd>
-          <dt>Hospitality</dt>
-          <dd>Making guests and visitors feel welcome and looked after.</dd>
-        </dl>
-
-        <form class="check" data-correct="b">
-          <fieldset>
-            <legend>Quick check</legend>
-            <p>Besides greeting guests, what can an AI receptionist do?</p>
-            <label><input type="radio" name="check-7" value="a"> Hire new staff</label>
-            <label><input type="radio" name="check-7" value="b"> Tell staff by message that their guest has arrived</label>
-            <label><input type="radio" name="check-7" value="c"> Sign contracts</label>
-            <button type="submit">Check answer</button>
+          <fieldset class="quiz-q" data-correct="a">
+            <legend>7. At a tourist attraction, what is &ldquo;upselling&rdquo; or &ldquo;cross-selling&rdquo;?</legend>
+            <label><input type="radio" name="quiz-7" value="a"> Offering extras such as drinks or souvenirs</label>
+            <label><input type="radio" name="quiz-7" value="b"> Giving tickets away for free</label>
+            <label><input type="radio" name="quiz-7" value="c"> Closing the attraction early</label>
+            <p class="quiz-result" role="status"></p>
+            <p class="quiz-why" hidden>A visitor concierge can suggest extra purchases to visitors.</p>
           </fieldset>
-          <p class="check-result" role="status" tabindex="-1"></p>
-          <p class="check-why" hidden>It can notify staff by SMS, WhatsApp or Telegram when a guest arrives.</p>
-          <a class="check-next" href="#section-8" hidden>Next section</a>
-        </form>
-      </section>
-
-      <section id="section-8" aria-labelledby="title-8">
-        <h2 id="title-8">AI Agents for Hospitality &ndash; Tourism &amp; Attractions</h2>
-        <img src="images/tourism-visitor-concierge.jpg" width="930" height="1024" loading="lazy"
-             alt="A group of tourists asking a virtual guide on a screen for ideas. The screen sits on a small wheeled robot in a historic town square.">
-        <p>At tourist spots, an AI <strong>visitor concierge</strong> can:</p>
-        <ul>
-          <li>Serve visitors and tourists in different languages.</li>
-          <li>Introduce the features and highlights of an attraction or event venue.</li>
-          <li>Suggest extra purchases, such as drinks or souvenirs (this is called upselling and cross-selling).</li>
-        </ul>
-        <h3>In plain words</h3>
-        <dl>
-          <dt>MICE venue</dt>
-          <dd>A place for meetings, incentives, conferences and exhibitions.</dd>
-          <dt>Upsell / cross-sell</dt>
-          <dd>Offering a better version of what someone is buying, or something extra that goes with it.</dd>
-        </dl>
-
-        <form class="check" data-correct="c">
-          <fieldset>
-            <legend>Quick check</legend>
-            <p>What can an AI visitor concierge do?</p>
-            <label><input type="radio" name="check-8" value="a"> Only answer in one language</label>
-            <label><input type="radio" name="check-8" value="b"> Only sell tickets</label>
-            <label><input type="radio" name="check-8" value="c"> Serve visitors in different languages</label>
-            <button type="submit">Check answer</button>
+          <fieldset class="quiz-q" data-correct="b">
+            <legend>8. Which is something a customer can do with a retail AI agent?</legend>
+            <label><input type="radio" name="quiz-8" value="a"> Approve staff pay</label>
+            <label><input type="radio" name="quiz-8" value="b"> Find a product on a map</label>
+            <label><input type="radio" name="quiz-8" value="c"> Hire a delivery driver</label>
+            <p class="quiz-result" role="status"></p>
+            <p class="quiz-why" hidden>Customers can ask questions, get recommendations, check price and stock, find a product on a map and go straight to checkout.</p>
           </fieldset>
-          <p class="check-result" role="status" tabindex="-1"></p>
-          <p class="check-why" hidden>It serves visitors and tourists in different languages and introduces the highlights of the attraction.</p>
-          <a class="check-next" href="#section-9" hidden>Next section</a>
-        </form>
-      </section>
-
-      <section id="section-9" aria-labelledby="title-9">
-        <h2 id="title-9">Challenges in Retail &amp; Service Industry</h2>
-        <img src="images/retail-challenges.jpg" width="1024" height="1024" loading="lazy"
-             alt="Three photos side by side: a couple shopping in a supermarket aisle, a person browsing clothes on a laptop, and a woman using a perfume advisor screen with an AI avatar.">
-        <p>People now shop in three ways: in a physical shop, online, and with a personalised AI advisor. This brings four challenges for shops and service businesses:</p>
-        <ul>
-          <li><strong>Shifting demographics.</strong> Who prefers a human, online, digital or AI touch?</li>
-          <li><strong>In-store sales coverage.</strong> Do customers wait too long to be served, or to check a price or whether something is in stock?</li>
-          <li><strong>Consistent service around the clock.</strong> Are there enough staff for long opening hours, and are customers happy?</li>
-          <li><strong>Knowing what customers want.</strong> Is there enough data to understand them and make decisions?</li>
-        </ul>
-        <h3>In plain words</h3>
-        <dl>
-          <dt>Demographics</dt>
-          <dd>Facts about a group of people, such as their age.</dd>
-          <dt>Retail</dt>
-          <dd>Selling goods directly to customers, in shops or online.</dd>
-        </dl>
-
-        <form class="check" data-correct="a">
-          <fieldset>
-            <legend>Quick check</legend>
-            <p>Which is a challenge for shops and service businesses?</p>
-            <label><input type="radio" name="check-9" value="a"> Customers waiting too long to be served or to check a price</label>
-            <label><input type="radio" name="check-9" value="b"> Prices are always too low</label>
-            <label><input type="radio" name="check-9" value="c"> Nobody shops online</label>
-            <button type="submit">Check answer</button>
-          </fieldset>
-          <p class="check-result" role="status" tabindex="-1"></p>
-          <p class="check-why" hidden>In-store sales coverage is one of the four challenges: customers may wait too long to be served.</p>
-          <a class="check-next" href="#section-10" hidden>Next section</a>
-        </form>
-      </section>
-
-      <section id="section-10" aria-labelledby="title-10">
-        <h2 id="title-10">Retail AI Agents</h2>
-        <img src="images/retail-ai-agents.jpg" width="1200" height="937" loading="lazy"
-             alt="Illustrated retail store with an AI expert avatar on a screen for each area: apparel, handbags, chocolates and perfumes. An online AI expert appears in a chat window, and a label notes that AI agents assist staff in running the store.">
-        <p>The idea here is <strong>engage everywhere</strong>: customer engagement with no friction. It has three steps:</p>
-        <ol>
-          <li>Put AI experts everywhere, for example one for apparel, handbags, chocolates and perfumes, plus one online.</li>
-          <li>Help staff become trusted advisers, with AI agents assisting them in running the store.</li>
-          <li>Let customers do &lsquo;anything&rsquo; anywhere.</li>
-        </ol>
-        <p>That last step means customers can:</p>
-        <ul>
-          <li>Ask questions</li>
-          <li>Get recommendations</li>
-          <li>Check price</li>
-          <li>Check stock</li>
-          <li>Get personalised promotions</li>
-          <li>Find a product on a map</li>
-          <li>Go straight to checkout</li>
-        </ul>
-        <h3>In plain words</h3>
-        <dl>
-          <dt>Frictionless</dt>
-          <dd>Smooth and easy, with nothing slowing the customer down.</dd>
-          <dt>Trusted adviser</dt>
-          <dd>Someone customers rely on for honest, helpful advice.</dd>
-          <dt>Personalised promotion</dt>
-          <dd>An offer chosen to suit one particular customer.</dd>
-        </dl>
-
-        <form class="check" data-correct="b">
-          <fieldset>
-            <legend>Quick check</legend>
-            <p>What does &ldquo;engage everywhere&rdquo; mean?</p>
-            <label><input type="radio" name="check-10" value="a"> AI works only at the checkout</label>
-            <label><input type="radio" name="check-10" value="b"> AI experts are placed everywhere, so customers can ask, check price and stock, and more, anywhere</label>
-            <label><input type="radio" name="check-10" value="c"> Customers must find a person first</label>
-            <button type="submit">Check answer</button>
-          </fieldset>
-          <p class="check-result" role="status" tabindex="-1"></p>
-          <p class="check-why" hidden>AI experts are put everywhere, and customers can do &lsquo;anything&rsquo; anywhere, from asking questions to checking out.</p>
-          <a class="check-next" href="#section-1" hidden>Back to the top</a>
-        </form>
-      </section>
+          </form>
+          <div class="quiz-score" role="status" tabindex="-1" hidden>
+            <p class="quiz-score-text"></p>
+            <button type="button" class="quiz-retry">Try again</button>
+          </div>
+        </section>
+      </div>
 
     </main>
   </div>

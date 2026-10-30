@@ -24,7 +24,9 @@ Update this section whenever files or folders are added.
 
 ### Site structure
 
-One long scrolling page for beginners, with one section per slide of the deck (10 sections, in slide order). Each section has the slide's key points, its picture, and a short "In plain words" note.
+One page with two tabs at the top: **Lesson** and **Quiz**. Everything stays on the same page. There is no Simulator tab because the course has no simulator.
+
+The Lesson tab is one long scrolling page for beginners, with one section per slide of the deck (10 sections, in slide order). Each section has the slide's key points, its picture, a short "In plain words" note, and a check-in question.
 
 1. Course introduction
 2. Will AI take over my job?
@@ -39,16 +41,18 @@ One long scrolling page for beginners, with one section per slide of the deck (1
 
 How students move between sections:
 
-- Scroll down to read in order.
-- Use the menu to jump to any section (JavaScript scrolls to it, on the same page): a side list on desktop, a drop-down on tablet and phone. It highlights where you are.
-- The light/dark switch is in the header on every screen size.
+- Lesson tab (the default): scroll down to read in order, or use the menu to jump to any section. A "Take the quiz" button at the end switches to the Quiz tab.
 - Each section ends with one multiple-choice check-in question, answered in place with instant right/wrong feedback. The student can move on either way.
-- No sign-in, and answers are not saved or scored. Without JavaScript the full lesson still shows, but the check-in questions are hidden.
+- Quiz tab: 8 multiple-choice questions on the whole course. Each answer shows right or wrong straight away, and the score appears once all 8 are answered. "Try again" starts over.
+- The menu lists the 10 lesson sections, then "Quiz". Choosing any of them opens the right tab first (JavaScript, same page). It is a side list on desktop and a drop-down on tablet and phone, and it highlights where you are.
+- The light/dark switch is in the header on every screen size.
+- No sign-in, and answers are not saved. Without JavaScript the full lesson still shows, but the tabs, check-in questions and quiz are hidden.
 
 ### Phases
 
 - **Phase 1 – Course from my slides (built, plain styling):** all ten sections with images, plain-language notes, responsive layout and the light/dark toggle. The slide deck itself is not kept in the repository. Visual design comes next.
-- **Phase 2 – Publish:** share the finished page with students.
+- **Phase 2 – Quiz tab (built):** the 8-question scored quiz, as a tab beside the lesson.
+- **Phase 3 – Publish:** share the finished page with students.
 - **Later:** nothing planned yet. Ask before adding anything.
 
 ## Rules for Claude

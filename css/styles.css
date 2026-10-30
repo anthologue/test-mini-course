@@ -122,7 +122,15 @@ button {
 .js .site-nav.is-open { display: block; }
 
 .no-js .menu-btn,
-.no-js .theme-btn { display: none; }
+.no-js .theme-btn,
+.no-js .needs-js { display: none; }
+
+.site-nav ul {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.site-nav ol + .nav-title { margin-top: 1rem; }
 
 /* Lesson */
 main {
@@ -145,6 +153,55 @@ figcaption { color: var(--muted); font-size: 0.9rem; }
 
 dt { font-weight: bold; margin-top: 0.5rem; }
 dd { margin-left: 1.25rem; }
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 0.25rem;
+  padding-top: 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.tab {
+  border-bottom: 0;
+  border-radius: 4px 4px 0 0;
+}
+
+.tab[aria-selected="true"] {
+  font-weight: bold;
+  background: var(--bg);
+  border-color: var(--text);
+}
+
+/* Quiz */
+.quiz-q {
+  margin: 1.25rem 0;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+}
+
+.quiz-q legend { font-weight: bold; padding: 0 0.25rem; }
+
+.quiz-q label {
+  display: block;
+  margin: 0.4rem 0;
+}
+
+.quiz-result,
+.quiz-score-text { font-weight: bold; }
+.quiz-result { margin: 0.75rem 0 0; }
+.quiz-result:empty { display: none; }
+
+.quiz-score {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+}
+.quiz-score:focus { outline: none; }
+.quiz-score-text { margin-top: 0; font-size: 1.25rem; }
 
 /* Check-in question at the end of each section */
 .check {
