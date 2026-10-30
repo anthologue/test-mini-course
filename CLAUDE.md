@@ -42,7 +42,8 @@ How students move between sections:
 - Scroll down to read in order.
 - Use the menu to jump to any section (JavaScript scrolls to it, on the same page): a side list on desktop, a drop-down on tablet and phone. It highlights where you are.
 - The light/dark switch is in the header on every screen size.
-- Reading only: no quiz, no sign-in, nothing saved. Without JavaScript the full lesson still shows.
+- Each section ends with one multiple-choice check-in question, answered in place with instant right/wrong feedback. The student can move on either way.
+- No sign-in, and answers are not saved or scored. Without JavaScript the full lesson still shows, but the check-in questions are hidden.
 
 ### Phases
 

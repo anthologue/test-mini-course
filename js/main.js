@@ -75,6 +75,39 @@
       });
     });
 
+    // Check-in questions: mark the answer, explain it, then offer the next section
+    document.querySelectorAll('.check').forEach(function (form) {
+      var result = form.querySelector('.check-result');
+      var why = form.querySelector('.check-why');
+      var next = form.querySelector('.check-next');
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var chosen = form.querySelector('input:checked');
+        if (!chosen) {
+          result.textContent = 'Pick an answer first.';
+          return;
+        }
+
+        var right = form.querySelector('input[value="' + form.dataset.correct + '"]');
+        var isRight = chosen === right;
+        result.className = 'check-result ' + (isRight ? 'correct' : 'wrong');
+        result.textContent = isRight
+          ? '✓ Correct!'
+          : '✗ Not quite. The answer is: ' + right.parentNode.textContent.trim();
+
+        form.querySelectorAll('input, button').forEach(function (el) { el.disabled = true; });
+        why.hidden = false;
+        next.hidden = false;
+        result.focus();
+      });
+
+      next.addEventListener('click', function (e) {
+        e.preventDefault();
+        goTo(next.getAttribute('href').slice(1));
+      });
+    });
+
     // Highlight the section being read
     function setCurrent(index) {
       links.forEach(function (a, i) {

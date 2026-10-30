@@ -146,6 +146,42 @@ figcaption { color: var(--muted); font-size: 0.9rem; }
 dt { font-weight: bold; margin-top: 0.5rem; }
 dd { margin-left: 1.25rem; }
 
+/* Check-in question at the end of each section */
+.check {
+  margin: 2rem 0;
+  padding: 1rem;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+}
+
+.check fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.check legend { font-weight: bold; }
+
+.check label {
+  display: block;
+  margin: 0.4rem 0;
+}
+
+.check-result {
+  margin: 0.75rem 0 0;
+  font-weight: bold;
+}
+.check-result:empty { display: none; }
+.check-result:focus { outline: none; }
+
+.check-next {
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+.no-js .check { display: none; }
+
 /* Desktop: side list */
 @media (min-width: 56rem) {
   .layout {
